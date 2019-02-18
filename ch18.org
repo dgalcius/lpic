@@ -1,0 +1,274 @@
+Chapter 18
+Domain Name Server (Topic 207)
+THE FOLLOWING LPIC-2 EXAM TOPICS ARE COVERED IN THIS CHAPTER:
+
+207.1 Basic DNS server configuration
+BIND 9.x configuration files, terms and utilities
+Defining the location of the BIND zone files in BIND configuration files
+Reloading modified configuration and zone files
+Awareness of dnsmasq, djbdns, and PowerDNS as alternate name servers
+The following is a partial list of the used files, terms and utilities:
+/etc/named.conf
+/var/named/
+rndc
+named-checkconf
+kill
+host
+dig
+207.2 Create and maintain DNS zones
+BIND 9 configuration files, terms and utilities
+Utilities to request information from the DNS server
+Layout, content and file location of the BIND zone files
+Various methods to add a new host in the zone files, including reverse zones
+The following is a partial list of the used files, terms and utilities:
+/var/named/
+zone file syntax
+resource record formats
+named-checkzone
+named-compilezone
+masterfile-format
+dig
+nslookup
+host
+207.3 Securing a DNS server
+BIND 9 configuration files
+Configuring BIND to run in a chroot jail
+Split configuration of BIND using the forwarders statement
+Configuring and using transaction signatures (TSIG)
+Awareness of DNSSEC and basic tools
+Awareness of DANE and related records
+The following is a partial list of the used files, terms and utilities:
+/etc/named.conf
+/etc/passwd
+DNSSEC
+dnssec-keygen
+dnssec-signzone
+1. Which configuration file is used as the default configuration for a BIND server?
+
+named.conf
+named.cfg
+bind.cfg
+bind.conf
+2. Which directive within a BIND configuration specifies the addresses or networks that are allowed to query the nameserver?
+
+query-addresses
+allow-query
+query-allow
+query-auth
+3. Which signal to the kill command can be used to signal that BIND should reload, including its configuration?
+
+-15
+-1
+-9
+-2
+4. What option to dnssec-keygen specifies the algorithm to use for the key?
+
+-a
+-n
+-d
+-e
+5. Which of the following describes a fundamental difference between named-compilezone and named-checkzone?
+
+named-checkzone and named-compilezone do the same thing.
+named-checkzone checks a zone for syntax errors; named-compilezone checks a zone for syntax errors and sends output to a file.
+named-checkzone performs syntax checking, while named-compilezone converts the zone to a different format.
+named-checkzone performs syntax checking, while named-compilezone prepares the zone for usage with BIND.
+6. When creating MX records for a zone, which of the following is the highest priority mail exchanger?
+
+0
+10
+20
+100
+7. On which protocol and port are zone transfer requests sent?
+
+UDP/53
+ICMP/53
+TCP/143
+TCP/53
+8. Within which of the following directories are zone files stored for BIND?
+
+/var/named
+/etc/named
+/var/cache/named
+/var/named.zones
+9. Which of the following commands is used to control a BIND name server?
+
+bind-config
+named-config
+rndc
+rdmc
+10. Which type can be used with the dig command to test a zone transfer?
+
+xfr
+transfer
+zxfr
+axfr
+11. Which BIND configuration directive sets the IP addresses on which the daemon will listen?
+
+listeners
+listen-on
+listen-in
+ip-listeners
+12. When configuring BIND for a chroot scenario, within which of the following files should you set the home directory for the chroot user to use with bind?
+
+/etc/bind.home
+/etc/bind.user
+/etc/passwd
+/etc/bindauth
+13. Which command is used to sign a DNS zone for DNSSEC?
+
+dnssec-signzone
+signzone
+bind-signzone
+dnssec-sign
+14. Which option to the host command sets the query type to ANY?
+
+-a
+-b
+-c
+-d
+15. Which of the following correctly creates a CNAME record between the hostname www and the host web.example.com?
+
+www CNAME web.example.com
+web.example.com CNAME www
+www IN CNAME web.example.com.
+www IN CNAME web.example.com
+16. Which option to the forward directive in BIND sets the server as a forwarding server?
+
+only
+first
+now
+required
+17. When running a recursive nameserver, which of the following options refuses to provide answers to queries from the given addresses?
+
+deny-hosts
+blackhole
+deny-query
+deny-answer
+18. Which of the following is a prerequisite for installing djbdns?
+
+BIND9
+daemontools
+qmail
+bind-tools
+19. Which command can be used to verify that a BIND configuration file is valid?
+
+bind9-ver
+bind-check
+config-check
+named-checkconf
+20. Which of the following TTL values represents eight hours?
+
+8
+480
+28800
+86400
+21. Assuming the following portion of a BIND zone file, what does the value 1800 represent?
+
+@ IN SOA cwa.example.org. root.example.org. (
+2016070400
+3600
+1800
+604800
+86400 )
+Refresh
+Retry
+Default TTL
+Serial
+22. Which type of resource record is used for SPF records?
+
+SPF
+MX
+TXT
+MAIL
+23. Which of the following defines an MX record with a priority of 10?
+
+MX 10 mail.example.com.
+10 MX mail.example.com.
+mail.example.com 10 MX
+mail.example.com MX 10
+24. Within which file can per-user default settings be created for the dig command?
+
+/etc/dig.cfg
+/etc/dig.conf
+~/.digrc
+~/.dig.conf
+25. Which option to the mount command is helpful to facilitate running BIND in a chroot environment?
+
+--bind
+--chroot
+--lift
+--secure
+26. When setting up a recursive name server, which type of zone is set up for the root hints file?
+
+Master
+Slave
+Recurse
+Hint
+27. After making changes to a DNS zone, which of the following commands can be used to reload the zones so that the changes take effect?
+
+rndc reload
+rndc restart-zones
+rndc zone-reload
+rndc-rel
+28. Which configuration option within a BIND zone configuration specifies the hosts that are allowed to request a zone transfer?
+
+allow-axfr
+allow-xfr
+allow-trans
+allow-transfer
+29. Which type of DNS record is used for specifying a POP3 server?
+
+POP
+PO
+MX
+There is no specific type for POP3 servers.
+30. Which directive within a BIND configuration enables specification of the hosts or networks that are allowed to perform a recursive lookup using the server?
+
+allow-recurs
+allow-recursive
+allow-recursion
+allow-rec
+31. Which of the following is the correct format for a named-checkzone command?
+
+named-checkzone <zone> <zonefile>
+named-checkzone -z <zone>
+named-checkzone -f <zonefile>
+named-checkzone <zonefile> <zone>
+32. Which algorithm must be used for rndc authentication when generating a key with dnssec-keygen?
+
+sha1
+sha256
+md5
+hmac-md5
+33. Which of the following configuration directives tells BIND not to divulge its version?
+
+allow-version { none }
+version none;
+allow-query-version { none; }
+query-version no;
+34. Which option to named-checkconf is used to perform a test of all master zones noted in the config file?
+
+-l
+-f
+-z
+-d
+35. You have specified 300 as the TTL for an individual record within your zone, and the zone itself has an 86400 default TTL. When making a change to that individual record, how long will it take for the change to propagate to external resolvers after you have restarted BIND?
+
+Up to 86400 seconds
+Up to 300 seconds
+The change is immediate after restart.
+It is impossible to tell from the information given.
+36. Which of the following packages will install the PowerDNS authoritative nameserver on Debian and Red Hat, respectively?
+
+pdns-server on Debian and pdns on Red Hat
+pdns on Debian and pdns-server on Red Hat
+pdns on both Debian and Red Hat
+pdns-server on both Debian and Red Hat
+37. Which of the following commands can be used to restart a BIND server so that changes to the named.conf file take effect?
+
+rndc reload
+rndc reconfig
+named reboot
+restart bind
+

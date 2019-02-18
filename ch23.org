@@ -1,0 +1,276 @@
+Chapter 23
+System Security (Topic 212)
+THE FOLLOWING LPIC-2 EXAM TOPICS ARE COVERED IN THIS CHAPTER:
+
+212.1 Configuring a router
+iptables and ip6tables configuration files, tools and utilities
+Tools, commands and utilities to manage routing tables.
+Private address ranges (IPv4) and Unique Local Addresses as well as Link Local Addresses (IPv6)
+Port redirection and IP forwarding
+List and write filtering and rules that accept or block IP packets based on source or destination protocol, port and address
+Save and reload filtering configurations
+The following is a partial list of the used files, terms and utilities:
+/proc/sys/net/ipv4/
+/proc/sys/net/ipv6/
+/etc/services
+iptables
+ip6tables
+212.2 Managing FTP servers
+Configuration files, tools and utilities for Pure-FTPd and vsftpd
+Awareness of ProFTPd
+Understanding of passive vs. active FTP connections
+The following is a partial list of the used files, terms and utilities:
+vsftpd.conf
+important Pure-FTPd command line options
+212.3 Secure shell (SSH)
+OpenSSH configuration files, tools and utilities
+Login restrictions for the superuser and the normal users
+Managing and using server and client keys to login with and without password
+Usage of multiple connections from multiple hosts to guard against loss of connection to remote host following configuration changes
+The following is a partial list of the used files, terms and utilities:
+ssh
+sshd
+/etc/ssh/sshd_config
+/etc/ssh/
+Private and public key files
+PermitRootLogin, PubKeyAuthentication, AllowUsers, PasswordAuthentication, Protocol
+212.4 Security tasks
+Tools and utilities to scan and test ports on a server
+Locations and organisations that report security alerts as Bugtraq, CERT or other sources
+Tools and utilities to implement an intrusion detection system (IDS)
+Awareness of OpenVAS and Snort
+The following is a partial list of the used files, terms and utilities:
+telnet
+nmap
+fail2ban
+nc
+iptables
+212.5 OpenVPN
+OpenVPN
+The following is a partial list of the used files, terms and utilities:
+/etc/openvpn/
+openvpn
+ 
+1. Which of the following options within an OpenSSH server configuration is used to determine whether the root user can log in directly with an ssh client?
+
+PermitRootLogin
+AllowRoot
+RootLogin
+PermitDirectRootLogin
+2. Which of the following files is used as the primary configuration file for vsftpd?
+
+vsftp.cfg
+vsftpd.conf
+vsftpd.cfg
+vsftp.conf
+3. Which iptables chain is used to create a port redirect?
+
+REDIRECT
+PREROUTING
+PORTREDIR
+ROUTING
+4. Which of the following files is the primary server configuration file for OpenSSH?
+
+/etc/ssh/sshd_config
+/etc/sshserver.conf
+/etc/openssh.conf
+/etc/openssh/sshd.conf
+5. Which of the following commands saves the current set of iptables rules into a file?
+
+save-iptables
+iptables-create
+iptables-save
+ipt-save
+6. When starting Pure FTPd, which command-line option is used to indicate that host names should not be resolved on client connection?
+
+-n
+-H
+-r
+-z
+7. Which of the following commands can be used to generate a private and public key pair for authentication with ssh?
+
+ssh-createkey
+sshkey
+ssh-key
+ssh-keygen
+8. Which of the following commands tests a connection to mail.example.com on the standard SMTP port?
+
+telnet mail.example.com smtp
+telnet mail.example.com 25
+telnet mail.example.com
+smtptest mail.example.com
+9. Which of the following commands lists the current iptables rules while not attempting to resolve host or port names?
+
+iptables -L
+iptables -List -no-resolve
+iptables -a
+iptables -nL
+10. Which command-line option to Pure FTPd disables anonymous upload?
+
+-n
+-a
+-i
+-m
+11. Which option within an OpenSSH configuration is used to specify the port on which the daemon will listen?
+
+Port
+ListenOn
+ListenPort
+PortNum
+12. Which option within an OpenVPN configuration lets a client know that it can reach the network 192.168.5.0/24?
+
+client-route 192.168.5.0
+push "route 192.168.5.0 255.255.255.0"
+send "route 192.168.5.0/24"
+client-route "192.168.5.0/24"
+13. Which of the following commands executes a port scan using TCP Connect to the host 192.168.2.3?
+
+portscan 192.168.2.3
+nmap -sT 192.168.2.3
+maphost 192.168.2.3
+tcpscan -C 192.168.2.3
+14. Which of the following directories contains configuration files for the fail2ban system?
+
+/etc/fail2ban.cfg
+/etc/fail2ban.d
+/etc/f2b
+/etc/fail2ban
+15. Which option on the client side of an SSH connection is used to specify the private key for authentication?
+
+ssh -i
+ssh -k
+ssh -p
+ssh -l
+16. Which of the following commands saves the current IPv6 iptables configuration?
+
+iptables6-save
+ip6tables-save
+iptables6save
+save-iptables6
+17. Within an OpenSSH configuration, which option disables the use of empty passwords?
+
+DisableEmptyPass
+PermitEmptyPasswords
+EmptyPasswordAuth
+PermitPasswordLength
+18. Which of the following commands sets the default policy for the INPUT chain to discard packets that don’t have a specific rule allowing them?
+
+iptables INPUT DROP
+iptables chain INPUT policy DROP
+iptables -P INPUT DROP
+iptables POLICY=DROP CHAIN=INPUT
+19. On which port and protocol does OpenVPN listen?
+
+ICMP/1194
+UDP/1194
+TCP/1194
+VPN/1194
+20. Which directive in an OpenSSH configuration is used for specifying the version of the SSH protocol to use?
+
+Proto
+Protocol
+ProtoVer
+Version
+21. Which of the following best describes the difference between the DROP and REJECT targets in iptables?
+
+Both DROP and REJECT do the same thing.
+DROP silently discards packets, while REJECT sends back an ICMP acknowledgement.
+REJECT silently discards packets, while DROP sends back an ICMP acknowledgement.
+DROP sends back a direct message, and REJECT sends a redirect.
+22. Which file contains a list of keys that will be accepted for authentication for a given user?
+
+~/ssh/keys
+~/.ssh/pubkeys
+~/.ssh/keyauth
+~/.ssh/authorized_keys
+23. Which of the following partial iptables rules sets up a configuration that limits log entries to three per minute?
+
+-m limit 3 -j LOG
+-m limit --limit 3/minute --limit-burst 3 -j LOG
+-m limit --limit 3
+-m limit --limit-minute 3 --burst 3 -j LOG
+24. Which option to the ssh command is used for X11 application forwarding?
+
+-X11
+-A
+-X
+-F
+25. The command netstat -a is reporting that port 80 is in use on the server. Which of the following commands can be used to determine what is actually using that port?
+
+listPorts
+portlist -a
+lsof -i
+tcpdump
+26. Which of the following partial iptables rules allows incoming ICMP traffic?
+
+-A INPUT -p ICMP -j ACCEPT
+-A IN -P ICMP
+-A INPUT -P ACCEPT-ICMP
+-A IN -P ICMP -j ACCEPT
+27. Which option in an OpenSSH configuration is used to determine whether port forwarding will be enabled?
+
+AllowPortForwarding
+PortForwarding
+ForwardPort
+AllowTcpForwarding
+28. Which of the following partial iptables rules blocks all traffic from 192.168.51.50?
+
+-A INPUT -p ALL 192.168.51.50 -j ACCEPT
+-A INPUT -p ALL -s 192.168.51.50 -j DROP
+-A INPUT -p ALL -s 192.168.51.50 -j BLOCK
+-A INPUT -p ALL -f 192.168.51.50 -j DISCARD
+29. Which of the following partial iptables rules will allow all hosts to connect to TCP port 2222?
+
+-A INPUT -p TCP -s 0/0 --destination-port 2222 -j ACCEPT
+-A TCP -s ALL -p 2222 -j ACCEPT
+-A INPUT -p TCP -s *.* --destination-port 2222 -j ALLOW
+-A INPUT --destination-port */* -j ACCEPT
+30. Which of the following commands enables forwarding such as would be used for NAT?
+
+echo "1" > /proc/sys/net/ipv4/nat
+echo "1" > /proc/sys/net/ipv4/ip_forward
+iptables --enable-forwarding
+ip-forward --enable
+31. Within the vsftpd.conf file, which directive enables IPv6?
+
+ipv6_enable
+ipv6
+ipv6_listen
+listen_ipv6
+32. Which configuration directive for OpenSSH determines whether key-based authentication will be used?
+
+KeyAuth
+PubKeyAuth
+PubkeyAuthentication
+AuthenticationKey
+33. Within a jail configuration for fail2ban, which configuration option sets the name and location of the log file to monitor for failures?
+
+logpath
+monitor
+logfile_mon
+monitor_log
+34. Which command sends a copy of the public key identity to another server for use with SSH?
+
+ssh-key
+ssh-copy-key
+ssh-sendkey
+ssh-copy-id
+35. Which command is used for creation and maintenance of firewall rules for IPv6?
+
+iptables6
+ip6tables
+ipv6tables
+ipfw6
+36. Which of the following OpenVPN configuration entries sends a DHCP option to a client to indicate the DNS server (192.168.2.1) to be used by the client?
+
+push "dhcp-option ns 192.168.2.1"
+push "dhcp-nameserver 192.168.2.1"
+push "dhcp-option DNS 192.168.2.1"
+push "dhcp-dns 192.168.2.1"
+37. Which option in vsftpd.conf specifies whether users will be able to authenticate to the server?
+
+local_enable
+users_login
+user_login
+local_users
+

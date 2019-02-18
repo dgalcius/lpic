@@ -1,0 +1,304 @@
+Chapter 15
+Advanced Storage Device Administration (Topic 204)
+THE FOLLOWING LPIC-2 EXAM TOPICS ARE COVERED IN THIS CHAPTER:
+
+204.1 Configuring RAID
+
+Software RAID configuration files and utilities
+The following is a partial list of the used files, terms and utilities:
+mdadm.conf
+mdadm
+/proc/mdstat
+partition type 0xFD
+
+204.2 Adjusting Storage Device Access
+
+Tools and utilities to configure DMA for IDE devices including ATAPI and SATA
+Tools and utilities to configure Solid State Drives including AHCI and NVMe
+Tools and utilities to manipulate or analyse system resources (e.g. interrupts)
+Awareness of sdparm command and its uses
+Tools and utilities for iSCSI
+Awareness of SAN, including relevant protocols (AoE, FCoE)
+The following is a partial list of the used files, terms and utilities:
+hdparm, sdparm
+nvme
+tune2fs
+fstrim
+sysctl
+/dev/hd*, /dev/sd*, /dev/nvme*
+iscsiadm, scsi_id, iscsid and iscsid.conf
+WWID, WWN, LUN numbers
+
+204.3 Logical Volume Manager
+
+Tools in the LVM suite
+Resizing, renaming, creating, and removing logical volumes, volume groups, and physical volumes
+Creating and maintaining snapshots
+Activating volume groups
+The following is a partial list of the used files, terms and utilities:
+/sbin/pv*
+/sbin/lv*
+/sbin/vg*
+mount
+/dev/mapper/
+lvm.conf
+
+1. Which file is used as a configuration file for RAID devices that use the md driver?
+
+/etc/md.conf
+/etc/mdadm.conf
+/etc/md.cfg
+/etc/md/md.conf
+
+2. Which partition type is used to indicate a software RAID array, such as that built with mdadm?
+
+0xmd
+-x-
+0xRD
+0xFD
+
+3. When working with World Wide Identifiers (WWIDs), within which directory on a Red Hat server will you find symlinks to the current /dev/sd device names?
+
+/dev/disk/wwid
+/dev/wwid
+/dev/disk/by-id
+/dev/sd.wwid
+
+4. Which of the following commands is used to perform administration related to iSCSI on a Linux server?
+
+iscsiadm
+iscsiadmin
+iscsi
+scsiadm
+
+5. Which of the following commands displays information about a given physical volume in an LVM setup?
+
+pvdisp
+pvlist
+pvdisplay
+pvl
+
+6. Which of the following configuration lines informs the md program that the first partition on both sda and sdb are eligible for use in a RAID array?
+
+DEV sda1 sdb1
+DEV /dev/sda1 /dev/sdb1
+DEVICE sda0 sdb0
+DEVICE /dev/sda1 /dev/sdb1
+
+7. When viewing information in /dev/disk/by-path using the command ls -l, which of the following filenames represents a LUN from Fibre Channel?
+
+/dev/fc0
+pci-0000:1a:00.0-fc-0x500601653ee0025f:0x0000000000000000
+pci-0000:1a:00.0-scsi-0x500601653ee0025f:0x0000000000000000
+/dev/fibre0
+
+8. Which of the following commands displays path information for LUNs?
+
+luninfo -a
+ls -lun
+multipath -l
+dm-multi
+
+9. Which command is used to remove unused filesystem blocks from thinly provisioned storage?
+
+thintrim
+thtrim
+fstrim
+fsclean
+
+10. You have purchased new SSD hardware that uses the NVMe protocol, but you cannot find the disks in the normal /dev/sd* location
+      in which you have traditionally found such storage. In which location should you look for these drives?
+
+/dev/nd*
+/dev/nvme*
+/dev/nv*
+/dev/nvme/*
+
+11. Which of the following commands can be used to generate a unique SCSI identifier?
+
+scsi_id
+scsi_identifier
+id_scsi
+lsid
+
+12. Which storage protocol features the ability to send ATA commands over Ethernet?
+
+iSCSI
+PXE
+POE
+AOE
+
+13. Which command can be used to set parameters for IDE and SATA devices on Linux?
+
+hdparam
+hdparm
+hdc
+hdcontrol
+
+14. After creating the physical volumes for an md RAID setup, what is the typical next step?
+
+Create one or more volume groups with vgcreate.
+Reboot the server.
+Start the array.
+Link the physical volumes to virtual groups with vgcreate.
+
+15. When using tune2fs to set an extended option such as stripe_width, which command-line option is needed to signify that an extended option follows?
+
+-extend
+-E
+-e
+-f
+
+16. Which file contains information about the current md RAID configuration such as the personalities?
+
+/proc/raidinfo
+/proc/rhyinfo
+/proc/mdraid
+/proc/mdstat
+
+17. Which of the following daemons is in charge of maintaining connections to iSCSI targets?
+
+iscsid
+iscsiadm
+iscsimgr
+iscsim
+
+18. Which module can be examined with modinfo for information related to the NVMe driver?
+
+nvmeid
+sata
+nvme
+nvmemod
+
+19. Which of the following directory hierarchies contains information such as the WWN for Fibre Channel?
+
+/sys/class/wwn
+/sys/class/fc_host
+/sys/class/fclist
+/sys/class/fc/wwn
+
+20. Which option to mdadm is used to create a new array?
+
+--create
+--start
+--begin
+--construct
+
+21. Which of the following files is used as a configuration file for iscsid?
+
+iscsid.cfg
+iscsid.conf
+iscsidaemon.conf
+iscsi.cfg
+
+22. Information about logical volumes can be found in which of the following directories?
+
+/dev/lvinfo
+/dev/map
+/dev/mapper
+/dev/lvmap
+
+23. Which option to mdadm watches a RAID array for anomalies?
+
+--mon
+--watch
+--monitor
+--examine
+
+24. When troubleshooting a failed md RAID array, you need to mount one of the drives in read-only mode. Which option will mount the drive in read-only?
+
+-o ro
+read-only
+-o rw
+-op ro
+
+25. Which of the following commands creates a logical volume with LVM?
+
+lvc
+lvcreate
+lvlist
+lvmake
+
+26. When running mdadm in monitor mode, which option within /etc/mdadm.conf sets the destination for email if an issue is discovered?
+
+MAILTO
+MAILADDR
+MAILFROM
+MAILDEST
+
+27. Which of the following commands looks for LVM physical volumes and volume groups involved in an LVM configuration?
+
+vgscan
+lvmscan
+lvlist
+pvlist
+
+28. Which partition type is used to indicate a software RAID array, such as that built with mdadm?
+
+0xmd
+-x-
+0xRD
+0xFD
+
+29. Which of the following commands is used to display a list of physical volumes involved in LVM?
+
+pvdisp
+pvlist
+pvscan
+pvmm
+
+30. Which of the following options to the multipathd command will enter the interactive console?
+
+-c
+-k
+-f
+-n
+
+31. Which option to lvchange sets whether the logical volume is available?
+
+-a
+-b
+-c
+-d
+
+32. Within which file can you configure a filter for devices when using vgscan?
+
+lvm.conf
+vg.conf
+vgscan.conf
+lv.cfg
+
+33. Which option to lvcreate will create a snapshot of a logical volume?
+
+snap
+snapshot
+ss
+Snapshots are not created with lvcreate.
+
+34. Which option is given to sysctl to change one of the kernel parameters?
+
+-a
+-k
+-w
+-A
+
+35. Which of the following commands is used to access and change values for SCSI devices?
+
+scsiparm
+scsiparam
+sdlist
+sdparm
+
+36. Which of the following directories contains configuration information for Fibre Channel over Ethernet (FCoE) on Linux?
+
+/etc/fcoe
+/etc/fibrecoe
+/etc/fibredev
+/etc/fc
+
+37. Which of the following commands will examine the PCI subsystem for NVMe-based devices?
+
+psnvme
+lsnvme
+lspci | grep scsi
+lspci | grep -i nvme

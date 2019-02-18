@@ -1,0 +1,259 @@
+Chapter 20
+File Sharing (Topic 209)
+THE FOLLOWING LPIC-2 EXAM TOPICS ARE COVERED IN THIS CHAPTER:
+
+209.1 Samba Server Configuration
+Samba 4 documentation
+Samba 4 configuration files
+Samba 4 tools and utilities and daemons
+Mounting CIFS shares on Linux
+Mapping Windows user names to Linux user names
+User-Level, Share-Level and AD security
+The following is a partial list of the used files, terms and utilities:
+smbd, nmbd, winbindd
+smbcontrol, smbstatus, testparm, smbpasswd, nmblookup
+samba-tool
+net
+smbclient
+mount.cifs
+/etc/samba/
+/var/log/samba/
+209.2 NFS Server Configuration
+NFS version 3 configuration files
+NFS tools and utilities
+Access restrictions to certain hosts and/or subnets
+Mount options on server and client
+TCP Wrappers
+Awareness of NFSv4
+The following is a partial list of the used files, terms and utilities:
+/etc/exports
+exportfs
+showmount
+nfsstat
+/proc/mounts
+/etc/fstab
+rpcinfo
+mountd
+portmapper
+1. Within which directory will you find configuration files related to Samba version 4?
+
+/etc/samba4
+/etc/samba
+/etc/smb
+/etc/filesharing/samba
+2. Which of the Samba daemons is responsible for responding to NetBIOS name service requests?
+
+smbd
+nmbd
+winbindd
+samba
+3. You have made a configuration change to smb.conf and need to have the config reloaded. Which of the following commands accomplishes this task with the least disruption to users?
+
+smbcontrol all shutdown
+smbcontrol smbd reload
+smbctrl all reload
+smbcontrol all reload-config
+4. Which of the following files is used to define the filesystems shared by NFS?
+
+/etc/nfs.cfg
+/etc/nfs.conf
+/etc/export.nfs
+/etc/exports
+5. Which of the following NFS shares allows users from cwa.example.com to connect with read-write access to an NFS share at /srv/vhosts?
+
+/srv/vhosts www.example.com(rw)
+www.example.com (rw) /srv/vhosts
+/srv/vhosts www.example.com (rw)
+/srv/vhosts www.example.com
+6. When using the net command in an Active Directory environment, which option enables authentication using Kerberos?
+
+-b
+-k
+-l
+-a
+7. Which option within a Samba configuration enables translation of Windows to Linux usernames?
+
+usermap
+usernamemaps
+userfile
+username map
+8. When specifying credentials on the command line with the Samba net command, which character is used to separate the username from the password?
+
+/
+\
+%
+!
+9. Which of the following host specifications enables any host within the example.org domain to mount an NFS filesystem?
+
+all=example.org
+rw=*.example.org
+*.example.org
+%.example.org
+10. Which filesystem type for the mount command is used for mounting Samba shares?
+
+win
+ext4
+vfat
+cifs
+11. Which of the following commands displays the currently mounted CIFS filesystems?
+
+mount -t smb
+lssmbd
+mount -t cifs
+ls -cifs
+12. To which setting should the security parameter be set within the Samba configuration in order for share-level security to be used?
+
+sharelevel
+share-level
+high
+share
+13. Which option to rpcinfo displays statistics on rpcbind operations?
+
+-s
+-m
+-l
+-e
+14. Which of the following commands displays the export list for a given NFS server?
+
+rpcmount
+showmount -e
+mount -shownfs
+mount -listnfs
+15. Which of the following lines in /etc/fstab will mount an NFS filesystem shared as /source from the host src.example.com into a directory called /srv/source on the local server?
+
+/source /srv/source -h src.example.com
+src.example.com/source /srv/source
+src.example.com:/source /srv/source nfs
+nfs src.example.com:/source /srv/source
+16. Which option to the nfsstat command shows statistics about only NFSv3?
+
+-3
+-o3
+-v3
+-t
+17. Which of the following files shows the currently mounted filesystems?
+
+/etc/mounts
+/proc/mounts
+/proc/mtab
+/etc/fstab
+18. Which of the following blocks access to the portmap service from the hosts within example.com’s network (192.168.1.0/24) when placed in hosts.deny?
+
+portmap: 192.168.1.0/24
+portmap: example.com
+portmap: *.example.com
+portmap: ALL/DENY 192.168.1.0/24
+19. Which option to smbstatus displays a list of locks?
+
+-l
+-L
+-o
+-m
+20. Which of the following commands creates a new user in the Samba password database?
+
+passwd -samba
+smbpasswd -a
+smbpass
+smbuser -c
+21. Which option, defined within a share in the Samba configuration file, specifies whether users browsing for network shares will be able to see the share?
+
+browsable
+shareconnect
+sharepoint
+browseenable
+22. Which of the samba-tool commands is used to verify the local Active Directory database to ensure that it is error free?
+
+dbverify
+dblist
+verifydb
+dbcheck
+23. Within which section of the Samba configuration file is the log file specified?
+
+[server]
+[logging]
+[global]
+[debug]
+24. Which of the following commands can be used to verify the syntax of the Samba configuration file?
+
+testsmb
+smbtest
+testparm
+smbver
+25. Which of the following commands exports all filesystems in /etc/exports by reloading the file to do so?
+
+export -a
+exportfs -ra
+exportnfs -a
+exportnfs -r
+26. Which option to smbclient enables specification of the order in which names are resolved?
+
+-R
+-r
+-d
+-o
+27. Which option to mountd logs all successful requests?
+
+-n
+-b
+-l
+-r
+28. Which option within a Samba share configures whether the share will allow read-write access?
+
+read write
+read only
+read/write
+read-write
+29. On which port(s) does smbd listen by default?
+
+139
+443
+139 and 445
+161 and 162
+30. Which option within /etc/exports prevents remote root users from having root privileges on the filesystem shared by the NFS server?
+
+no_root
+deny_root
+root_squash
+disallow_root
+31. Which of the following commands shows the Windows-to-Linux group mappings?
+
+groupmap list
+net groupmap list
+netgroup list
+net list groupmapping
+32. Which option to rpcinfo shows the current port mappings?
+
+-p
+-c
+-m
+-f
+33. Which of the following options to the smbpasswd command deletes the specified user?
+
+-d
+-x
+-o
+-e
+34. Which of the following commands lists the shares available on a host called fs.example.com?
+
+smblist
+smbshares -list
+smbclient -L
+smbshare -L
+35. Which of the following log file directives creates a separate log file for each share?
+
+log file = <share>.log
+log file = %<share>.log
+log file = %S.log
+log file = [share].log
+36. Which of the following commands can be used to test the status of Windows NetBIOS-related name services and browsing?
+
+mblookup
+adlookup
+browserl
+nmblookup
+37. Which of the following commands stops sharing all NFS file shares?
+
+nfs stop -a
+nfs-stopshare
+stopnfs -a
+exportfs -ua

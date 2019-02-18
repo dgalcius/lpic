@@ -1,0 +1,324 @@
+Chapter 13
+System Startup (Topic 202)
+THE FOLLOWING LPIC-2 EXAM TOPICS ARE COVERED IN THIS CHAPTER:
+
+202.1 Customising system startup
+
+Systemd
+SysV init
+Linux Standard Base Specification (LSB)
+The following is a partial list of the used files, terms and utilities:
+/usr/lib/systemd/
+/etc/systemd/
+/run/systemd/
+systemctl
+systemd-delta
+/etc/inittab
+/etc/init.d/
+/etc/rc.d/
+chkconfig
+update-rc.d
+init and telinit
+
+202.2 System recovery
+
+BIOS and UEFI
+NVMe booting
+GRUB version 2 and Legacy
+grub shell
+boot loader start and hand off to kernel
+kernel loading
+hardware initialisation and setup
+daemon/service initialisation and setup
+Know the different boot loader install locations on a hard disk or removable device.
+Overwrite standard boot loader options and using boot loader shells.
+Use systemd rescue and emergency modes.
+The following is a partial list of the used files, terms and utilities:
+mount
+fsck
+inittab, telinit and init with SysV init
+The contents of /boot/, /boot/grub/ and /boot/efi/
+EFI System Partition (ESP)
+GRUB
+grub-install
+efibootmgr
+UEFI shell
+initrd, initramfs
+Master boot record
+systemctl
+
+202.3 Alternate bootloaders
+
+SYSLINUX, ISOLINUX, PXELINUX
+Understanding of PXE for both BIOS and UEFI
+Awareness of systemd-boot and U-Boot
+The following is a partial list of the used files, terms and utilities:
+syslinux
+extlinux
+isolinux.bin
+isolinux.cfg
+isohdpfx.bin
+efiboot.img
+pxelinux.0
+pxelinux.cfg/
+uefi/shim.efi
+uefi/grubx64.efi
+
+1. Within which directory should systemd unit files that you create be stored?
+
+/etc/system
+/etc/systemd/system
+/usr/share/systemd
+/usr/share/system
+
+2. Which of the following commands should you execute after making changes to systemd service configurations in order for those changes to take effect?
+
+systemd reload
+reboot
+systemctl daemon-reload
+systemctl reboot
+
+3. Which of the following files contains the runlevels for the system along with a reference to the corresponding rc file?
+
+/etc/runlevels
+/etc/inittab
+/etc/rc
+/etc/runlevel
+
+4. Which bootloader can be used for FAT filesystems and might be used for a rescue disk?
+
+SYSBOOT
+SYSLINUX
+TIELINUX
+FATLINUX
+
+5. Which filesystem format type is used for the EFI System Partition (ESP)?
+
+FAT
+EXT4
+NTFS
+EXT3
+
+6. Which of the following is used to provide an early filesystem-based loading process for key drivers needed to continue the boot process?
+
+bootrd
+driverload
+initrd
+initdrv
+
+7. When booting a system, you receive an error similar to “No init found” and are then placed at an initramfs prompt. You need to check the hard drive for errors. Which of the following commands performs an error check on a hard drive partition in Linux?
+
+defrag
+fsck
+checkfs
+chkfs
+
+8. Which of the following commands places the system in single-user mode?
+
+tellinit 1
+chginit 1
+telinet 1
+telinit 1
+
+9. Which of the following commands installs extlinux into the /boot partition?
+
+extlinux ––install /boot
+extlinux ––inst /boot
+extlinux -boot
+extlinux /boot install
+
+10. Which of the following commands mounts /dev/sda1 in the /boot partition?
+
+mount /dev/sda /boot
+mount /boot /dev/sda1
+mount /dev/sda1 /boot
+mount -dev sda1 /boot
+
+11. Which of the following commands installs GRUB into the master boot record (MBR) of the first SATA drive?
+
+grub-install /dev/hda
+grub-install /dev/sda
+grub-install /dev/hd0,0
+grub -i /dev/hda
+
+12. Which of the following commands changes the boot order for the next boot?
+
+efibootmgr -c
+efibootmgr -b -B
+efibootmgr -o
+efibootmgr -n
+
+13. Which bootloader can be used with ISO9660 CD-ROMs?
+
+ISOLINUX
+EFIBOOT
+ISOFS
+BOOTISO
+
+14. Within which directory are systemd user unit files placed by installed packages?
+
+/usr/lib/systemd/user
+/usr/lib/systemd/system
+/usr/systemd
+/usr/system
+
+15. When using UEFI, which of the following files can be used as a bootloader?
+
+shim.uefi
+shim.efi
+shim.fx
+efi.shim
+
+16. Which of the following describes the priority order for configuration files with systemd?
+
+Files in /etc, files in /run, and then files in /lib
+Files in /run, files in /etc, and then files in /lib
+Files in /lib, files in /run, and then files in /etc
+Files in /lib, files in /etc, and then files in /run
+
+17. Which directory on a SysV init-based system contains scripts that are used for starting and stopping services?
+
+/etc/rc.int
+/etc/boot
+/etc/bootscripts
+/etc/init.d
+
+18. Which of the following commands is used to find overriding configuration files on a systemd-based system?
+
+diff
+systemctl -diff
+systemd-delta
+systemctl configoverride
+
+19. Which of the following commands on a Red Hat system lists all of the files set to be executed on boot along with their setting for each runlevel?
+
+rlevel
+chkconfig ––list
+bootldr ––list
+init ––bootlist
+
+20. Which of the following commands, executed from within the UEFI shell, controls the boot configuration?
+
+bootcfg
+bcfg
+grub-install
+grcfg
+
+21. Which of the following can be identified as an initial sector on a disk that stores information about the disk partitioning and operating system location?
+
+Minimal Boot Record (MBR)
+Master Boot Record (MBR)
+Init sector
+Master Partition Table (MPT)
+
+22. Once booted, within which directory is the EFI bootloader mounted?
+
+/boot/efi
+/etc/boot/efi
+/etc/efi
+/boot/loader
+
+23. To which target can a systemd-based system be set in order to assist with recovery?
+
+recovery.target
+recover.target
+target.recover
+rescue.target
+
+24. Which of the following configuration files is used for ISOLINUX?
+
+isolinux.cfg
+isolinux.conf
+isolin.cfg
+isolinux.conf.d
+
+25. Which file must exist within /tftpboot on the TFTP server for a system that will use PXELINUX for its bootloader?
+
+pxelinux.tftp
+pxelinux.boot
+pxelinux.conf
+pxelinux.0
+
+26. Which utility can you use on a Debian or Ubuntu system to manage SysV init scripts, such as setting them to run on boot?
+
+bootorder
+bootloader
+configchk
+update-rc.d
+
+27. Which key when pressed during the operating system selection menu is used to enable editing of the parameters related to boot with GRUB?
+
+v
+e
+r
+y
+
+28. Which of the following commands displays the default target for a systemd-based system?
+
+systemctl list-unit-default
+systemctl get-default
+systemctl get-unit-default
+systemctl get-default-unit
+
+29. Which options to the fsck command will find errors and automatically assume that it should repair the errors that it finds?
+
+-ry
+-vy
+-my
+-xy
+
+30. Which option to grub-install will place the GRUB images into an alternate directory?
+
+––boot-dir
+-b
+-boot
+––boot-directory
+
+31. Which systemctl subcommand is used to switch runlevels?
+
+switch
+move
+runlevel
+isolate
+
+32. When examining the /etc/inittab file, which option signifies the default run level to which the system will boot?
+
+default
+defaultboot
+initdefault
+defaultlvl
+
+33. Which of the following is used instead of initrd to provide an early filesystem for essential drivers?
+
+initnext
+initramfs
+initialize
+initfs
+
+34. Which of the following commands sets the default systemd target to multi-user?
+
+systemctl set-default multi-user.target
+systemd set-default multi-user.target
+systemctl set-def muser.target
+systemd set-def muser.target
+
+35. Using a shim for booting a UEFI-based system, which of the following files is loaded after shim.efi?
+
+grubx64.cfg
+grub.conf
+grubx64.efi
+efi.boot
+
+36. Within which hierarchy are files from /etc/init.d linked so that the files are executed during the various runlevels of a SysV system?
+
+/etc/rc.S
+/etc/rc
+/etc/boot/rc
+/etc/rc.d
+
+37. What is the name of the unit to which a systemd system is booted in order to start other levels?
+
+default.target
+init.target
+initial.target
+load.target

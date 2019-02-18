@@ -1,0 +1,365 @@
+Chapter 27
+Practice Test 4
+THE FOLLOWING IS A PRACTICE TEST FOR THE COMPTIA LINUX+ EXAM 202
+
+1. Which option within a BIND zone configuration stanza for a master zone is used to specify whether or not slave servers should be notified when there is a change to the zone?
+
+slave-notify
+notify-slave
+notify
+a-notify
+2. Which option to dnssec-keygen enables specification of the key size to use?
+
+-b
+-f
+-e
+-a
+3. Which option to named-checkzone suppresses output except for the exit code?
+
+-s
+-q
+-p
+-f
+4. When creating a zone file, a record contains the following: www IN A 192.168.1.1. To what does the IN refer in the record?
+
+Internal
+Internet
+Inner
+IN Priority
+5. On which port does rndc listen by default?
+
+53
+1053
+953
+530
+6. Which type of DNS record indicates the Start of Authority?
+
+A
+IN
+SOA
+NS
+7. Which option to the dig command sets the server to which the query will be sent to 192.168.3.2?
+
+@192.168.3.2
+server=192.168.3.2
+server=non-default
+––query-dest=192.168.3.2
+8. Which configuration directive for BIND sets the forwarders to which queries will be sent?
+
+forward-dest
+forward-ip
+forwarding
+forwarders
+9. Which BIND configuration directive sets the IP address from which queries will be sent?
+
+query-source
+query-ip
+query-origination
+source-ip
+10. Which option to named-checkzone enables a dump of the zone in canonical format?
+
+-D
+-d
+-c
+-o
+11. When using named-checkconf, which option should be used if BIND is operating in a chroot environment?
+
+-c
+-t
+-f
+-r
+12. Which option to htpasswd specifies password encryption using bcrypt?
+
+-B
+-b
+-m
+-C
+13. Which configuration option for Apache changes how the version information is returned by the server for server-generated documents?
+
+Version
+ServerVersion
+ServerTokens
+VersionToken
+14. Which of the following is the primary configuration file for an Apache2 server?
+
+apache2.conf
+apache.conf
+http.cfg
+httpd.conf
+15. Which directive in a Squid configuration enables the setting of the port on which Squid will listen for connections?
+
+tcp_port
+http_port
+listen_host
+ip_listener
+16. Which Apache directive sets the location of the public key for an SSL-based virtual host?
+
+SSLCertificateKeyFile
+SSLCertificateFile
+SSLCertificatePublicKey
+SSLCertFile
+17. Which SSL-related directive sets the available list of cryptographic ciphers available on an Apache server?
+
+SSLCipherList
+SSLCiphers
+SSLCipherSuite
+SSLCryptoList
+18. When using an AuthGroupFile with Apache, which of the following is the correct format for a group called AdminGroup with members steve and tim?
+
+Group: steve, tim
+Group: steve tim
+AdminGroup: steve tim
+AdminGroup: steve, tim
+19. Which Apache web server log file format sequence is used to log the number of bytes in the response, including HTTP headers?
+
+%b
+%B
+-b
+-B
+20. Which argument to the ca.pl helper script can be used to create a new certificate authority hierarchy?
+
+-ca
+-genca
+-newca
+-canew
+21. You are looking for files related to the SSL configuration on the server. After looking in /etc/ssl, within which other directory might the files reside?
+
+/etc/sslconfig
+/usr/share/ssl
+/etc/pki
+/etc/private
+22. On which port does the nmbd Samba daemon listen on?
+
+139
+445
+143
+137
+23. Which message type can be used by smbcontrol to facilitate a new browse master election by nmbd?
+
+force-election
+new-election
+send-election
+notify-election
+24. Which mode of the Samba net command is used to work with Active Directory?
+
+rpc
+ads
+ad
+actived
+25. Which of the following configuration options for NFS facilitates the use of an NIS netgroup called admins within a host definition for an export?
+
+-admins
+group=admins
+@admins
+admin=rw
+26. Which of the following formats is correct for specifying a username of Steve and a password of Boo for a Samba mount command?
+
+-o username=Steve,password=Boo
+-username Steve -password Boo
+-credentials=Steve,Boo
+––credentials=Steve,Boo
+27. To which level should security be set within a Samba configuration in order for Active Directory security to be used?
+
+ads
+ad
+domain
+controlDomain
+28. Which of the following options to the showmount command displays both host and directory information for mounted directories?
+
+-a
+-b
+-c
+-d
+29. Which of the following commands lists the current Samba shares?
+
+smbstats
+smbstatus -S
+smbshares
+smbd -shares
+30. You need to create a new user for Samba. However, you executed the command smbpasswd -a and subsequently found out that the specified user already exists. What will be the result of running smbpasswd -a on an existing user?
+
+The user information will be overwritten with new information.
+The password will be changed.
+An error will occur.
+A duplicate entry will be created.
+31. The Samba configuration for your Linux server does not use the standard port for SMB shares. Which option to the smbclient command enables setting the port?
+
+-a
+-p
+-b
+-d
+32. Which option within a host stanza in dhcpd.conf is used to specify the reserved IP address for a DHCP reservation?
+
+ip-address
+address
+ethernet address
+fixed-address
+33. Which of the following describes a primary difference between slapadd and ldapadd?
+
+The ldapadd command is used when the server is running, whereas slapadd works with the database while the server is offline.
+The ldapadd command is used to add entries to the local database, whereas slapadd is used to add entries to a remote database.
+The ldapadd command has been deprecated in favor of slapadd.
+The ldapadd command is used for OpenLDAP, whereas slapadd is used for Active Directory.
+34. When radvd starts, it will exit if a given interface does not exist. Which interface option changes this behavior?
+
+StartAlways
+StartIfMissing
+IgnoreIfMissing
+MissingOK
+35. Which option in dhcpd.conf sets the default time for the DHCP lease for a given pool?
+
+lease-duration
+default-lease-time
+default-time
+lease-time
+36. Which of the following configuration lines in /etc/nsswitch.conf provides group membership information from local files and then LDAP?
+
+groupmembers: files ldap
+groups: files ldap
+group: files ldap
+group [files ldap]
+37. The sssd.conf file is divided into sections. Which section of sssd.conf specifies overall or general parameters for the daemon?
+
+[general]
+[service]
+[sssd]
+[main]
+38. Within which file is the configuration related to the pam_limits.so module stored?
+
+limits.conf
+pam_limits.conf
+pamlimit.conf
+limitproc.cfg
+39. Which option to slapcat specifies the file to which the output will be written?
+
+-f
+-l
+-o
+-d
+40. Which changetype in an LDIF file is used to indicate that an entry should be changed?
+
+change
+modify
+mod
+update
+41. Within which objectClass does the LDAP attribute mail reside?
+
+inetOrgPerson
+mailOrg
+orgMail
+organization
+42. Which of the following operators is used to test whether a value is greater than another value with Sieve?
+
+>
+greater-than
+ge
+gt
+43. Within which directory are configuration files for Dovecot stored?
+
+/usr/dovecot
+/etc/dovecot
+/etc/dovecot.conf.d
+/etc/dove.cfg.d
+44. Which of the following is the sendmail command to print the mail queue?
+
+sendmail -q
+sendmail -bp
+sendmail -bq
+sendmail -mailq
+45. Which of the following commands deletes all of the messages in the Postfix deferred queue?
+
+postsuper -d DEFERRED
+postqueue -d DEF
+postsuper -d ALL deferred
+postqueue -d ALL
+46. Which of the following options can be used with postcat to display only the body of the message?
+
+-m
+-e
+-h
+-b
+47. Which of the following Sieve tests will match on a message that is greater than 500 KB?
+
+if message > 500
+if size :over 500K
+if messagesize > 500K
+if size :morethan 500
+48. Which of the following commands produces a password appropriate for use with Dovecot?
+
+dovepass
+doveadm pw
+dovepasswd
+doveadm pass
+49. Which configuration parameter in a Postfix configuration sets the limit on an individual message?
+
+message_size_limit
+message_max
+message_size
+max_message_size
+50. Which of the following address-part structures is used to indicate the entire e-mail address with Sieve?
+
+:email
+:address
+:all
+:full
+51. When testing the SMTP protocol using a tool like Telnet, which of the following lines specifies the destination address as part of the SMTP conversation?
+
+RCPT TO
+MAILTO
+DEST
+TO
+52. Which of the following iptables targets is used to create a port redirection?
+
+PORTDIR
+PORTREDIR
+REDIR
+REDIRECT
+53. Which Pure-FTPd directive is used to limit bandwidth for authenticated users?
+
+-T
+-B
+-b
+-t
+54. Which of the following commands connects to www.example.com on the standard HTTP port?
+
+nc www.example.com
+nc www.example.com 80
+nc www.example.com:80
+nc www.example.com:http
+55. Which of the following commands clears iptables rules for a given chain?
+
+iptables -P
+iptables -C
+iptables -F
+iptables -N
+56. Which OpenSSH configuration directive is used to specify the users who will be allowed to log in using SSH?
+
+AllowUsers
+PermitUsers
+UsersAllowed
+AllowedUsers
+57. Which of the following commands prevents packets from going out on an interface different from the interface on which the packet was received?
+
+iptables ––no-redirect
+echo "1" > /proc/sys/net/ipv4/conf/all/rp_filter
+echo "1" > /proc/sys/net/ipv4/conf/all/redirect_filter
+echo "1" > /proc/sys/net/ipv4/conf/all/pf
+58. Which of the following commands creates a local port-forwarding scenario where connections to port 8080 will be sent to www.example.com on port 80 through the server at ssh.example.com?
+
+ssh -forward 80:www.example.com:8080 ssh.example.com
+ssh -p 8080:www.example.com:80 ssh.example.com
+ssh ssh.example.com -F 8080
+ssh -L 8080:www.example.com:80 ssh.example.com
+59. When using netstat -a, which file is consulted for port-number-to-name translation?
+
+/etc/portnum
+/etc/services
+/etc/portnames
+/proc/sys/net/ipv4/ports
+60. Which option within a LOG target for iptables sets a string that will be prepended to log entries?
+
+––log-prefix
+––prepend
+––log-prepend
+––log-str
+

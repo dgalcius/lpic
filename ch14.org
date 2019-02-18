@@ -1,0 +1,307 @@
+Chapter 14
+Filesystems and Devices (Topic 203)
+THE FOLLOWING LPIC-2 EXAM TOPICS ARE COVERED IN THIS CHAPTER:
+
+203.1 Operating the Linux filesystem
+
+The concept of the fstab configuration
+Tools and utilities for handling swap partitions and files
+Use of UUIDs for identifying and mounting file systems
+Understanding of systemd mount units
+The following is a partial list of the used files, terms and utilities:
+/etc/fstab
+/etc/mtab
+/proc/mounts
+mount and umount
+blkid
+sync
+swapon
+swapoff
+
+203.2 Maintaining a Linux filesystem
+
+Tools and utilities to manipulate and ext2, ext3 and ext4
+Tools and utilities to perform basic Btrfs operations, including subvolumes and snapshots
+Tools and utilities to manipulate XFS
+Awareness of ZFS
+The following is a partial list of the used files, terms and utilities:
+mkfs (mkfs.*)
+mkswap
+fsck (fsck.*)
+tune2fs, dumpe2fs and debugfs
+btrfs, btrfs-convert
+xfs_info, xfs_check, xfs_repair, xfsdump and xfsrestore
+smartd, smartctl
+
+203.3 Creating and configuring filesystem options
+
+autofs configuration files
+Understanding of automount units
+UDF and ISO9660 tools and utilities
+Awareness of other CD-ROM filesystems (HFS)
+Awareness of CD-ROM filesystem extensions (Joliet, Rock Ridge, El Torito)
+Basic feature knowledge of data encryption (dm-crypt / LUKS)
+The following is a partial list of the used files, terms and utilities:
+/etc/auto.master
+/etc/auto.[dir]
+mkisofs
+cryptsetup
+
+1. Within which file is a list of the currently mounted filesystems stored?
+
+/etc/fstab
+/etc/curmount
+/var/spool/files
+/etc/mtab
+
+2. Which option to mke2fs sets the type of filesystem to be created?
+
+-f
+-a
+-t
+-e
+
+3. Which of the following files is the default configuration file for the autofs automounter?
+
+/etc/autofs
+/etc/auto.master
+/etc/autofs.conf
+/etc/automounter.conf
+
+4. Which of the following commands is used to create an ISO filesystem?
+
+mkiso
+mkfsiso
+mkisofs
+isofs-mk
+
+5. Which of the following commands is used to configure dm-crypt volumes?
+
+cryptsetup
+dm-cryptsetup
+dm-setup
+dm-crypts
+
+6. Which command is used to format a swap partition?
+
+mkfs -swap
+mkswap
+format -swap
+mksw
+
+7. Which option to the tune2fs command sets the maximum mount count before the system will automatically run fsck on the partition on boot?
+
+-b
+-c
+-C
+-a
+
+8. Which option to the mount command can be used to simulate the mount process without actually mounting the filesystem?
+
+-q
+-v
+-l
+-f
+
+9. When viewing /proc/mounts, you see a filesystem with the letters ro in the fourth column. To what do the letters ro refer?
+
+relative option
+realtime option
+read only
+relative only
+
+10. Which option to dumpe2fs displays the bad blocks for a given partition?
+
+-bb
+-C
+-b
+-f
+
+11. Which of the following filesystem types features copy-on-write?
+
+ext3
+ext4
+FAT
+btrfs
+
+12. Which of the following commands displays filesystem geometry for an XFS filesystem?
+
+xfsinfo
+xfs_info
+xfs -info
+xfs ––info
+
+13. Which of the following commands can be used to display information such as the UUID for partitions on a system?
+
+blkid
+blockdev
+devinfo
+uuidinfo
+
+14. Which option to the umount command will cause it to unmount only filesystems of the specified type?
+
+-v
+-f
+-t
+-a
+
+15. Which command causes unwritten data to be written to disk immediately?
+
+write
+wrnow
+connwrite
+sync
+
+16. Which command is used to activate swap space on a system?
+
+mkswap
+swapon
+swapact
+actswap
+
+17. Which option to xfs_check is used to verify a filesystem that is stored in a file?
+
+-v
+-a
+-f
+-d
+
+18. Which option to debugfs causes the filesystem to be opened in read-write mode rather than the default read-only?
+
+-rw
+-w
+-r
+-n
+
+19. Which daemon is responsible for monitoring Self-Monitoring, Analysis, and Reporting Technology–compatible hard drives?
+
+smartmon
+smarty
+sartd
+smartd
+
+20. Which option to the fsck command causes it to run the check even if the filesystem is apparently marked as clean?
+
+-f
+-m
+-a
+-c
+
+21. You are performing an xfsrestore. The xfsdump was executed with a block size of 4M. Which option do you need to invoke on xfsrestore in order for it to use this dump successfully?
+
+-b 4M
+-g 1M
+-i 1M
+-k 1028K
+
+22. You see the word defaults within /etc/fstab. Which options are encompassed within the defaults?
+
+ro, exec, auto
+rw, suid, dev, exec, auto, nouser, async
+rw, exec, auto, nouser, async
+rw, exec, nouser, async, noauto, suid
+
+23. Which of the following commands is used to administer and configure how SMART monitoring is done?
+
+smartmon
+smartconf
+smartd
+smartctl
+
+24. Which of the following is the correct format for a filesystem in /etc/fstab?
+
+<filesystem> <mountpoint> <type> <options> <dump> <pass>
+<mountpoint> <filesystem> <type> <options> <dump> <pass>
+<mountpoint> <filesystem> <type> <options> <pass> <dump>
+<filesystem> <mountpoint> <type> <dump> <pass> <options>
+
+25. Which key derivation function is used by LUKS?
+
+PBKDF2
+SSL
+RSA
+DSA
+
+26. Which of the following commands creates a btrfs subvolume?
+
+btrfs create subvolume
+btrfs subvolume create
+btrfs sv create
+btrfs svcreate
+
+27. Which of the following options to xfsdump sets the maximum size for files to be included in the dump?
+
+-p
+-s
+-z
+-b
+
+28. Which option to the tune2fs command sets the behavior when a filesystem error occurs?
+
+-f
+-d
+-e
+-k
+
+29. The /etc filesystem has been mounted as read-only for a recovery process. You need to mount another partition. Which option to the mount command causes it not to write to /etc/mtab?
+
+-a
+-m
+-b
+-n
+
+30. Which of the following commands deactivates swap space?
+
+swapoff
+swap -off
+unmountswap
+uswap
+
+31. Within the [mount] section of a systemd mount unit, which directive specifies the location for mounting the chosen filesystem?
+
+Where=
+Location=
+List=
+Dest=
+
+32. Which of the following swapon options displays information on the size of swap space along with its used space?
+
+––list
+-a
+––show
+-h
+
+33. Which of the following commands can be used to format a FAT filesystem?
+
+mkfs.fat
+mkfs -f
+mkfs ––fat
+mkfat
+
+34. Which of the following commands adds a journal to an existing ext3 filesystem?
+
+tune2fs -jrn
+e2fs -x
+tune3fs
+tune2fs -j
+
+35. Which of the following commands creates a snapshot of a btrfs subvolume?
+
+btrfs subvolume snapshot
+btrfs snapshot ––create
+btrfs create snapshot
+btrfs ––create
+
+36. Which option to xfs_repair will force log zeroing, even if there may be metadata within the log?
+
+-L
+-v
+-d
+-V
+
+37. Which of the following commands mounts a filesystem in read-only mode?
+
+mount read-only
+mount ––read
+mount -o ro
+mount -or

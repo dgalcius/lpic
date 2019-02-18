@@ -1,0 +1,303 @@
+Chapter 11
+Capacity Planning (Topic 200)
+THE FOLLOWING LPIC-2 EXAM TOPICS ARE COVERED IN THIS CHAPTER:
+
+200.1 Measure and troubleshoot resource usage
+
+Measure CPU usage.
+Measure memory usage.
+Measure disk I/O.
+Measure network I/O.
+Measure firewalling and routing throughput.
+Map client bandwidth usage.
+Match / correlate system symptoms with likely problems.
+Estimate throughput and identify bottlenecks in a system including networking.
+The following is a partial list of the used files, terms and utilities:
+iostat
+iotop
+vmstat
+netstat
+ss
+iptraf
+pstree, ps
+w
+lsof
+top
+htop
+uptime
+sar
+swap
+processes blocked on I/O
+blocks in
+blocks out
+
+200.2 Predict future resource needs
+
+Use monitoring and measurement tools to monitor IT infrastructure usage.
+Predict capacity break point of a configuration.
+Observe growth rate of capacity usage.
+Graph the trend of capacity usage.
+Awareness of monitoring solutions such as Icinga2, Nagios, collectd, MRTG and Cacti
+The following is a partial list of the used files, terms and utilities:
+diagnose
+predict growth
+resource exhaustion
+
+1. When using iostat to assess performance, which option displays information on a per-partition basis for block devices?
+
+-a
+-c
+-d
+-p
+
+2. When using iptraf for monitoring over an ssh connection, all of the traffic from your ssh session is showing up within the monitor. Which of the following is used to exclude and/or include traffic from the iptraf monitor?
+
+Area
+Filter
+Exclusion
+Selector
+
+3. Which of the following commands displays blocks in and blocks out as related to I/O?
+
+iorpt
+iptraf
+vmswap
+vmstat
+
+4. Which of the following commands can be used to display real-time information about disk usage on a per-process basis?
+
+iostat
+top
+iotop
+free
+
+5. You need to deploy a monitoring solution that enables alerts along with advanced scripted responses based on configurable performance conditions. Which of the following software packages performs these tasks?
+
+MySQL
+ntop
+mrtg
+Nagios
+
+6. Which of the following commands can be used to display a list of currently logged-in users along with the current load average and time since last reboot?
+
+uptime
+w
+swap
+sysinfo
+
+7. Which of the following commands provides an overview of current memory usage along with swap space and its current utilization?
+
+mem
+free
+pstat
+swap
+
+8. Which of the following describes a method for changing the sort order when using the top command such that the highest memory utilizers will be shown at the top of the list?
+
+Within top, type o and then select mem.
+Within top, press Shift+F, scroll to %MEM, press s to select, and then press q to quit.
+Within top, press S and then select %MEM.
+Within top, press Shift+S, select %MEM, then press q to quit.
+
+9. Which of the following commands can be used to display the current disk utilization?
+
+df
+du
+diskutil
+diskuse
+
+10. Which of the following monitoring tools can use SNMP and scripts to collect data for performance-related graphing?
+
+ptop
+pstree
+Cacti
+Grafr
+
+11. Which tool can be used to measure the memory usage of individual processes in order to aid in capacity planning?
+
+ps
+iotop
+iostat
+ifconfig
+
+12. Which option to htop enables monitoring of a single process ID?
+
+-p
+-a
+-e
+-s
+
+13. Which of the following netstat options displays the send and receive queues for each socket?
+
+-r
+-M
+-a
+-v
+
+14. Which of the following tools provides an ncurses-based graphical tool for network monitoring that can be used over an ssh connection?
+
+ipmon
+iptraf
+ipconfig
+netmon
+
+15. Which of the following commands enables a sorted and grouped list of processes, grouped into a parent/child display?
+
+ps
+psdisp
+pstree
+ptree
+
+16. Which of the following commands displays CPU-related performance information a total of 10 times gathered every two seconds?
+
+sar -u 2 10
+sar -u 10 2
+sar -u 2
+uptime -t
+
+17. Which of the following tools provides an ncurses-based interface for working with processes, including viewing, changing priority, and killing the processes?
+
+htop
+ptop
+libtop
+restop
+
+18. When viewing statistics with vmstat, which statistic represents the time that the CPU spent waiting for I/O?
+
+sy
+us
+wa
+io
+
+19. Which option to the pstree command displays process IDs along with the normal output?
+
+-i
+-b
+-p
+-a
+
+20. When viewing information with ps, what does the RSS column indicate?
+
+Real Swap Size
+Remaining Swap Space
+Resident Set Size
+Recommended Set Space
+
+21. Which of the following commands displays a list of currently open files along with their sizes?
+
+ls
+lsof
+lsio
+ls -o
+
+22. When using htop to monitor a process interactively, which key can be used to display open files for the selected process?
+
+L
+l
+f
+o
+
+23. When working in a virtual server environment, which column within iostat output shows the amount (percentage) of time spent in an involuntary wait scenario due to the hypervisor?
+
+proc
+wait
+user
+steal
+
+24. Which of the following performance-monitoring commands is available by default in most modern Linux installs and does not need to be installed as a separate package?
+
+Icinga2
+top
+sar
+Nagios
+
+25. What time intervals are represented by the three numbers in the load average output obtained with the uptime command?
+
+1, 5, and 15 minutes
+5, 10, and 15 minutes
+10, 30, and 60 seconds
+1, 3, and 5 minutes
+
+26. Which of the following files contains information about the swap space including the currently used amount of swap and the disk partitions used for the swap space?
+
+/proc/swapinfo
+/proc/swaps
+/proc/swap
+/etc/swap.conf
+
+27. Which of the following tools provides a web interface for network-related statistics such as bandwidth usage per protocol and host?
+
+mrtg
+Nagios
+ntop
+htop
+
+28. Which option to the ps command displays information in a wide format?
+
+z
+w
+a
+o
+
+29. When no interval or count is provided for the sar command, what information is used as output?
+
+Statistics gathered since last restart
+Current load average
+Statistics on current utilization
+Average I/O
+
+30. Which of the following lsof commands will display all open connections for port 80?
+
+lsof -i 80
+lsof 80
+lsof -i :80
+lsof -i -80
+
+31. Which option to iostat causes the display to output in megabytes?
+
+-k
+-l
+-m
+-o m
+
+32. When viewing information with vmstat, you notice that there are two processes in the b column, indicating uninterruptible sleep. How do you find which specific processes are currently in uninterruptible sleep mode?
+
+Add the -n option to vmstat.
+Use ps and look for D in the Stat column.
+Use ps and look for Sl in the Stat column.
+Reboot the server.
+
+33. When working with htop, which of the following options sets the delay between updates to 10 seconds?
+
+-d 10
+-d 100
+-f 10
+-f 100
+
+34. Which of the following commands and options displays performance information including memory and CPU usage every second for 10 seconds?
+
+vmstat 1 10
+iostat 10 1
+vmstat 10 1
+iostat 1 10
+
+35. Which of the following commands displays the number of packets forwarded by the kernel?
+
+ls
+ipstat
+ifconfig -a
+netstat -s
+
+36. You are using a two-processor system and notice that the one-minute load average is 1.00. What does this mean for performance?
+
+One of the processors was idle 50% of the time.
+The system is constrained by the CPUs because it is at 100% capacity.
+The CPU utilization cannot be determined from this information.
+One of the processors was idle 25% of the time.
+
+37. What is the expected output when providing a 0-increment value to the sar command with no count value provided?
+
+Statistics from the beginning of time
+Average utilization since last restart
+Continuously updated statistics
+An error will occur.

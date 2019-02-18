@@ -1,0 +1,328 @@
+Chapter 12
+Linux Kernel (Topic 201)
+THE FOLLOWING LPIC-2 EXAM TOPICS ARE COVERED IN THIS CHAPTER:
+
+201.1 Kernel components
+
+Kernel 2.6.x, 3.x and 4.x documentation
+The following is a partial list of the used files, terms and utilities:
+//usr/src/linux/
+//usr/src/linux/Documentation/
+zImage
+bzImage
+xz compression
+
+201.2 Compiling a Linux kernel
+
+//usr/src/linux/
+Kernel Makefiles
+Kernel 2.6.x, 3.x and 4.x make targets
+Customize the current kernel configuration.
+Build a new kernel and appropriate kernel modules.
+Install a new kernel and any modules.
+Ensure that the boot manager can locate the new kernel and associated files.
+Module configuration files
+Use DKMS to compile kernel modules.
+Awareness of dracut
+The following is a partial list of the used files, terms and utilities:
+mkinitrd
+mkinitramfs
+make
+make targets (all, config, xconfig, menuconfig, gconfig, oldconfig, mrproper, zImage, bzImage, modules, modules_install, rpm-pkg, binrpm-pkg, deb-pkg)
+gzip
+bzip2
+module tools
+//usr/src/linux/.config
+//lib/modules/kernel-version/
+depmod
+dkms
+
+201.3 Kernel runtime management and troubleshooting
+
+Use command-line utilities to get information about the currently running kernel and kernel modules.
+Manually load and unload kernel modules.
+Determine when modules can be unloaded.
+Determine what parameters a module accepts.
+Configure the system to load modules by names other than their file name.
+/proc filesystem
+Content of /, /boot/, and /lib/modules/
+Tools and utilities to analyse information about the available hardware
+udev rules
+The following is a partial list of the used files, terms and utilities:
+//lib/modules/kernel-version/modules.dep
+module configuration files in /etc/
+/proc/sys/kernel/
+/sbin/depmod
+/sbin/rmmod
+/sbin/modinfo
+/bin/dmesg
+/sbin/lspci
+/usr/bin/lsdev
+/sbin/lsmod
+/sbin/modprobe
+/sbin/insmod
+/bin/uname
+//usr/bin/lsusb
+//etc/sysctl.conf, /etc/sysctl.d/
+/sbin/sysctl
+udevmonitor
+udevadm monitor
+/etc/udev/
+
+1. You are upgrading the kernel that has been previously compiled on the same server. Which of the following commands incorporates the contents of the existing kernel configuration into the new kernel?
+
+config ––merge
+make oldconfig
+merge config
+int configs
+
+2. Within which directory is the kernel source typically kept?
+
+/usr/src/linux
+/usr/linux/kernel
+/usr/source/kernel
+/etc/kernelsrc
+
+3. Which of the following commands unzips a kernel source file that has been compressed with xz compression?
+
+xz -c
+xz -u
+xz -f
+xz -d
+
+4. Which of the following compressed kernel images is limited to a maximum size of 512 KB?
+
+zImage
+bzImage
+kImage
+lImage
+
+5. Which make target provides a curses-based interface into kernel compilation to help select options within the kernel?
+
+config
+menuconfig
+cursesconfig
+cleanconfig
+
+6. You are working with a legacy CentOS 5 system and need to re-create the initial RAM disk. Which of the following commands is used for this purpose?
+
+mkinitrd
+mkramdisk
+mkdisk ––init
+mkfs.init
+
+7. Which compression method is used for creation of a bzImage?
+
+zip
+lzip
+bzip2
+bzip3
+8. When compiling a kernel, the final configuration is placed into which of the following files?
+
+//usr/src/linux/.kernelcfg
+//usr/src/linux/.config
+//usr/src/linux/.kconfig
+/usr/src/linux/kernel.cfg
+
+9. Which of the following commands is used to display the currently loaded modules on a running system?
+
+ls -mod
+lsmod
+listmod
+mod ––list
+
+10. Which of the following make targets should be used in order to ensure that most compiled files from a previous compile are removed?
+
+config
+clean
+proper
+mrproper
+
+11. Which kernel configuration option enables you to add information such as a custom version number to the kernel version?
+
+CUSTVER
+LOCALVERSION
+CUSTOMVERSION
+APPENDVER
+
+12. Which of the following tools is used to create kernel modules, even if the source is outside the kernel source tree?
+
+kbuild
+mkmod
+dkms
+modbuild
+
+13. Which of the following commands creates a list of modules and their dependencies?
+
+lsmod
+depmod
+modlist
+listmod
+
+14. Which of the following commands is used to view kernel-related udev events in real time?
+
+udevls all
+lsudev -f
+udevmon -a
+udevadm monitor
+
+15. Which of the following commands displays USB-related information from the kernel in a tree-like structure?
+
+lsusb -t
+usblist ––tree
+usbtree
+usblist -t
+
+16. Which option to sysctl displays all values and their current settings?
+
+-a
+-b
+-d
+-c
+
+17. Which of the following commands installs a kernel module, including dependencies?
+
+lsmod
+modprobe
+modinst
+instmod
+
+18. Which of the following make targets can be used to create a Debian package of a kernel image and related files?
+
+kpkg
+deb-pkg
+bin-deb
+deb-bin
+
+19. Which of the following commands displays the current kernel version?
+
+kver
+uname -r
+uptime -k
+kerver
+
+20. Within which directory hierarchy are the names and values for sysctl gathered?
+
+/sysctl
+/etc/sysctl.info
+/proc/sys
+/proc/sysctl
+
+21. Within which directory are rules related to udev stored?
+
+/etc/udev.conf
+/etc/udev.conf.d
+/etc/udev/rules.d
+/etc/udev.d
+
+22. Which command is used to determine the modules on which another module depends?
+
+modinfo
+modlist
+modprobe
+tracemod
+
+23. Within which directory will you typically find the documentation related to kernel source?
+
+/usr/src/Documentation
+/usr/share/kerneldocs
+/usr/src/linux/Documentation
+/usr/share/kernel/Documentation
+
+24. Which option to lspci displays the kernel driver in use for the given PCI device?
+
+-t
+-k
+-n
+-a
+
+25. Which of the following commands inserts a module into the running kernel but does not resolve dependencies?
+
+lsmod
+modinstall
+insmod
+moduleinst
+
+26. Which option to modprobe will remove a module and attempt to remove any unused modules on which it depends?
+
+-v
+-r
+-d
+-f
+
+27. Which of the following make targets is used to install previously compiled modules?
+
+modules
+modules_install
+instmod
+modinst
+
+28. Within which of the following directories will you find blacklist information for modules loaded with modprobe?
+
+/etc/blacklist
+/etc/modprobe.d
+/etc/blacklist.mod
+/etc/modprobe
+
+29. Which of the following commands displays a list of currently loaded modules?
+
+depmod
+depmod -a
+lsmod
+listmod
+
+30. When working with a CentOS 6 system, which command is used to create the initial RAM disk?
+
+mkinit
+dracut
+mkraminit
+mkinitfs
+
+31. Which command is used to remove a kernel module from a running system?
+
+modrm
+rmmod
+modremove
+removemod
+
+32. If you’d like a value set with the sysctl command to take effect on boot, within which file should you place the variable and its value?
+
+/etc/sysctl.cfg
+/etc/sysctl.conf
+/lib/sysctl
+/var/sysctl.conf
+
+33. Within which file will you find a list of the currently available kernel symbols?
+
+/proc/kernelsyms
+/etc/kernel.conf
+/etc/lsyms
+/proc/kallsyms
+
+34. Which of the following options to modprobe will show the dependencies for a module?
+
+––show-deps
+––show-depends
+––deps
+––list-depends
+
+35. Which of the following commands can be used to show the various pieces of information related to a currently loaded module, including core size and settings for options?
+
+systool -v -m <module>
+modinfo -r <module>
+lsmod <module>
+infmod <module>
+
+36. Which directory contains various elements and configuration information about the kernel, such as the release number, domain name, location of modprobe, and other settings?
+
+/proc/sys/kmod
+/proc/sys/kernel
+/proc/kernel
+/proc/kernel/sys
+
+37. Which of the following commands displays messages in the kernel ring buffer?
+
+kring
+ringbuf
+dmesg
+kmesg

@@ -1,0 +1,267 @@
+Chapter 17
+System Maintenance (Topic 206)
+THE FOLLOWING LPIC-2 EXAM TOPICS ARE COVERED IN THIS CHAPTER:
+
+206.1 Make and install programs from source
+Unpack source code using common compression and archive utilities.
+Understand basics of invoking make to compile programs.
+Apply parameters to a configure script.
+Know where sources are stored by default.
+The following is a partial list of the used files, terms and utilities:
+/usr/src/
+gunzip
+gzip
+bzip2
+xz
+tar
+configure
+make
+uname
+install
+patch
+206.2 Backup operations
+Knowledge about directories that have to be include in backups
+Awareness of network backup solutions such as Amanda, Bacula, Bareos and BackupPC
+Knowledge of the benefits and drawbacks of tapes, CDR, disk or other backup media
+Perform partial and manual backups.
+Verify the integrity of backup files.
+Partially or fully restore backups.
+The following is a partial list of the used files, terms and utilities:
+/bin/sh
+dd
+tar
+/dev/st* and /dev/nst*
+mt
+rsync
+206.3 Notify users on system-related issues
+Automate communication with users through logon messages.
+Inform active users of system maintenance
+The following is a partial list of the used files, terms and utilities:
+/etc/issue
+/etc/issue.net
+/etc/motd
+wall
+shutdown
+systemctl
+1. Which of the following compression programs is used for compression of the official kernel source code?
+
+gzip2
+bzip2
+xz
+xy
+2. Which option to the rsync command provides archive mode?
+
+-r
+-o
+-a
+-f
+3. Which option to the tar command creates a tar file?
+
+-c
+-b
+-f
+-d
+4. Which option to tar removes files after adding them to the archive?
+
+-r
+-d
+--remove-files
+-f
+5. Which of the following patch commands strips the leading slash from the path for files to patch?
+
+patch -p0
+patch -strip 1
+patch -s0
+patch -p1
+6. Which of the following is the recommended name for a file containing commands and relationships used with the make command?
+
+Makefile
+makefile
+make.file
+Makefile.txt
+7. Which make target is commonly used as a standard convention for removing extraneous files from a previous make process?
+
+cleanup
+next
+netbuild
+clean
+8. Which script, typically included with source code, is used to check dependencies and prepare the Makefile with customizations based on the system?
+
+config
+installer
+prep
+configure
+9. According to the Filesystem Hierarchy Standard (FHS), within which directory should source code be placed?
+
+/usr/local/src
+/usr/src
+/src
+/home/source
+10. You have downloaded a source file with the extension .gz. Which of the following commands will uncompress the file?
+
+unzip
+gunzip
+dezip
+uncomp
+11. Which of the following dd commands reads and writes bytes one megabyte at a time?
+
+dd bsl=1024M
+dd size=1M
+dd bs=1M
+dd rw=1M
+12. Which configuration directive for Amanda defines a name for the type of tape (or device) to be used as a backup destination?
+
+dest
+index
+tapetype
+desttype
+13. Which of the following devices is the location of the first SCSI tape device detected at boot?
+
+/dev/st
+/dev/sd0
+/dev/sd1
+/dev/st0
+14. Which of the following files should be used to display a message to users prior to logging in locally?
+
+/etc/loginmesg
+/etc/logmessage.txt
+/etc/issue
+/etc/banner
+15. Which option to the rsync command, when used in archive mode, will remove files that no longer exist on the host?
+
+--delete
+--remove
+-del
+-rem
+16. Which of the following commands broadcasts a message to all logged-in users?
+
+bcast
+broadcast
+show
+wall
+17. When creating a tar archive, you need to exclude certain files from the archive. Which option facilitates this scenario?
+
+-x
+--exclude
+--ex
+--remove
+18. Which file contains a message that is then displayed after a successful login?
+
+/etc/loginbanner
+/etc/issue
+/etc/motd
+/etc/message
+19. Which of the following tar commands is used to extract from a file named archive.tar in such a manner that the contents are printed to STDOUT during extraction?
+
+tar -cvf archive.tar
+tar -xvf archive.tar
+tar -zf archive.tar
+tar -yvf archive.tar
+20. Which of the following commands will properly execute the configure script for a source code package, assuming that you have already changed into the source code directory?
+
+configure./
+./config
+./configure
+exec config
+21. Which of the following options to the tar command can be used to uncompress a file that has been compressed using gzip?
+
+-z
+-x
+-c
+-f
+22. Which of the following files can be used to provide a message to users logging in remotely with a protocol such as Telnet?
+
+/etc/telnet.msg
+/etc/issue.net
+/etc/login.msg
+/etc/telnet.login
+23. Which of the following commands turns off the computer, including removing power, if possible?
+
+systemctl halt
+systemctl reboot
+systemctl stop
+systemctl poweroff
+24. Which of the following commands outputs information about the kernel version and processor architecture?
+
+uname -a
+lskern
+kern -v
+proc info
+25. Which option to the rsync command changes the resolution for determining file modifications?
+
+--mod-time
+--modify-time
+--mod-res
+--modify-window
+26. Which option to the patch command creates a backup of files being patched?
+
+-r
+-b
+-l
+-a
+27. Which target for make, typically included in the Makefile for most projects, will place compiled files into their final destination and perform other operations such as making the appropriate files executable?
+
+list
+distclean
+run
+install
+28. Which option to the tar command indicates xz compression?
+
+-x
+-c
+-J
+-j
+29. Which option to the rsync command examines only the file size as a means of determining whether the file should be synchronized?
+
+--filesize
+--size-only
+--list-size
+--file-size
+30. Which of the following xz options is used to uncompress a file and send the uncompressed contents to STDOUT?
+
+--decompress --stdout
+--deout
+--uncomp --stdout
+-out -u
+31. Which of the following options to bzip2 sends the output to STDOUT?
+
+-s
+-c
+-d
+-f
+32. Which of the following files is typically used as the Bacula Director configuration file?
+
+/etc/bacula/bacula.cfg
+/etc/bacula.cfg
+/etc/bacula-dir.conf
+/etc/bacula/bacula-dir.conf
+33. Which of the following commands rewinds a tape when using the mt command?
+
+mt reverse
+mt rewind
+mt goback
+mt operation=back
+34. Which of the following shutdown commands reboots the system in 15 minutes?
+
+shutdown -r +15
+shutdown +15
+shutdown -15
+shutdown -r 00:15
+35. Which option to the gzip command will suppress all warning messages and might be useful in a situation where output is not appropriate?
+
+-v
+-q
+-L
+-r
+36. Which option to rsync specifies that the remote shell or transport for the synchronization process should use SSH?
+
+-t ssh
+--overssh
+-e ssh
+-F ssh
+37. Which option to a configure script will typically produce a list of available options for the command?
+
+--list
+--help
+--show
+--get

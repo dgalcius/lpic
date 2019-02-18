@@ -1,0 +1,365 @@
+Chapter 26
+Practice Test 3
+THE FOLLOWING IS A PRACTICE TEST FOR THE COMPTIA LINUX+ EXAM 201
+
+1. When using mdadm in monitor mode, which option sets the polling interval?
+
+––delay
+––internal
+––interval
+––poll
+2. Which options to mdadm will start an array, assuming that there is one RAID device on the server?
+
+––assemble
+––start
+––get
+––begin
+3. Which of the following commands can be used to set the first partition of the first SATA device to a RAID type?
+
+sfdisk /dev/sda1 fd
+sfdisk ––id /dev/sda 1 fd
+sfdisk /dev/sda 1 fd
+sfdisk /dev/list fd 1
+4. Which of the following is a persistent name that can be used across systems to identify a SCSI device?
+
+iSCSIID
+/dev/sd
+iLUN
+WWID
+5. Which of the following represents a valid mode for iscsiadm for discovering iSCSI targets?
+
+discovery
+discover
+find
+list
+6. Which command is used to build the LVM cache file?
+
+lvmcache
+lvcache
+vgscan
+vgcache
+7. Which of the following commands displays the current hostname as known to the kernel?
+
+cat /etc/passwd
+sysctl -n kernel.hostname
+sysctl -n net.host
+less /etc/hosts
+8. Which option within /etc/ssh/sshd_config is used to provide the name of a file that will be displayed prior to logging in via ssh?
+
+Banner
+LoginBanner
+MOTD
+Message
+9. Which option to a configure script is used to set the location to which the resulting compiled code will be installed?
+
+––location
+––dest
+––last
+––prefix
+10. Which options are encompassed when the -a option to rsync is invoked?
+
+-rlpt
+-rlptgo
+-rpfsxl
+-rlptgoD
+11. When troubleshooting an issue from the console, kernel messages continually print, making it difficult to perform the troubleshooting. Which option to dmesg will stop messages from being sent to the console?
+
+-D
+-off
+-E
+-O
+12. Which option to netstat displays information regarding multicast group membership?
+
+-m
+-g
+-r
+-a
+13. Which option to the ip command displays DNS names rather than merely IP addresses?
+
+-n
+-f
+-r
+-a
+14. Which of the following commands and options enables you to examine timing related to listening sockets?
+
+ss -o
+netstat -rn
+ping -f
+ls -l
+15. Which of the following dd commands writes the contents of linux.img to /dev/sdb1?
+
+dd if=linux.img > /dev/sdb1
+dd of=/dev/sdb1 > linux.img
+dd if=/dev/sdb1 of=linux.img
+dd if=linux.img of=/dev/sdb1
+16. Which of the following IP address and subnet mask pairs represents a private network in a /24 size?
+
+192.168.3.0/255.255.255.128
+172.16.19.128/255.255.0.0
+192.168.2.0/255.255.255.0
+10.168.1.0/0.0.0.255
+17. Which option to rsync creates a backup for each destination file transferred?
+
+-a
+-b
+-c
+-d
+18. Which option to the tar command preserves permissions?
+
+-x
+-v
+-z
+-p
+19. When viewing the results of a traceroute, you see !H. To what does !H refer?
+
+Network unreachable
+Host available
+Host unreachable
+High length
+20. Assuming that policy routing has been enabled in the kernel, which option to the ping command can be used to mark the outgoing request appropriately in order to indicate that the packet should be processed according to a particular policy?
+
+-m
+-a
+-p
+-k
+21. Which environment variable can be used to specify the default device on which the mt command will operate?
+
+TAPEDEVICE
+MTDEVICE
+MTTAPE
+TAPE
+22. When creating a backup for a system, which directory should be included so that most configuration files will be backed up?
+
+/var
+/opt
+/etc
+/bin
+23. When working with a patch file, which option can be used to have the patching process ignore whitespace?
+
+-w
+-i
+-e
+-p
+24. When working in ping mode, which option to iscsiadm sets the delay between two ping requests?
+
+-a
+-e
+-i
+-o
+25. Which option to hdparm checks the current power mode for a drive?
+
+-a
+-C
+-d
+-f
+26. Which file contains information on swap spaces and devices?
+
+/proc/swapspace
+/proc/swap
+/etc/swap
+/proc/swaps
+27. Which systemd target will boot into rescue mode?
+
+init
+rescue
+recovery
+recover
+28. Which option to fsck will report statistics such as CPU time used on completion of the fsck operation?
+
+-s
+-r
+-l
+-f
+29. Which make target for the kernel is used to answer no to every question when creating a config file?
+
+allconfig
+config
+allnoconfig
+menunoconfig
+30. Which of the following files provides information on memory utilization including free memory, buffers, cache usage, and several additional items?
+
+/proc/cpuinfo
+/proc/memtime
+/proc/memuse
+/proc/meminfo
+31. Which option to the modinfo command can be used to determine the options that a given module accepts?
+
+-o
+-p
+-e
+-f
+32. Which option to lspci displays the kernel driver (module) being used for a given device along with modules capable of being used for the device?
+
+-d
+-j
+-k
+-f
+33. After updating source files related to udev, which command should be used in order to update the hardware database index?
+
+udevadm update
+udev update
+udevhw update
+udevadm hwdb -u
+34. You need to look for files that are overriding each other when loading with systemd. Which of the following commands can help to show the files that are overridden with systemd?
+
+systemd-delta
+systemd-override
+systemd ––override
+systemctl ––override
+35. Which of the following commands installs the GRUB bootloader on the second SCSI disk?
+
+grub-load /dev/sda
+grub-install /dev/sdb
+grub-load /dev/sdb
+grub-install /dev/sdb2
+36. Which of the following commands can be used to list the UUID for each appropriate device in the computer?
+
+uuid
+ubid
+diskid
+blkid
+37. When using the dm-crypt command, which type of encryption is used by default?
+
+Plain
+SHA-256
+LUKS
+Loop
+38. You are creating an El Torito bootable CD with mkisofs. Which option is necessary to specify the boot image file?
+
+-el
+-b
+––torito-boot
+––tor
+39. You are running fstrim on all filesystems. The exit code is 64. To what does an exit code of 64 refer with the fstrim command?
+
+Success
+All disks failed
+Some disks failed
+General failure
+40. Which of the following is the correct option and format for adding an Ethernet and IP ARP entry, where <address> is the IP address and <hardware address> is the MAC address?
+
+arp -d <address>
+arp -c <address> <hardware address>
+arp -a <hardware address> <address>
+arp -s <address> <hardware address>
+41. Which of the following options to the iwlist command displays information on the available transmit power for a given interface?
+
+power
+txpower
+rcpower
+transmitpower
+42. Which scan mode for nmap provides an Xmas scan?
+
+-sT
+-sS
+-sP
+-sX
+43. Which option to tcpdump sets the snapshot length of packets to capture?
+
+-s
+-l
+-d
+-c
+44. Which option to journalctl displays the output in reverse, with newest entries first?
+
+-n
+-r
+-f
+-b
+45. Which of the following is the default location of the LVM cache?
+
+/etc/lvm/cache
+/etc/lvm/.cache
+/etc/lvmcache
+/home/lvm/.cache
+46. On which port does the ping command operate for ICMP echo requests?
+
+53
+1337
+33433
+No port is used for ICMP.
+47. Which systemd target can be used as an alternative to rescue mode when recovery is not possible in rescue mode?
+
+emerg
+recover
+control-recover
+emergency
+48. When performing an rsync across devices, you receive errors that file ownership cannot be preserved, likely due to missing users or groups on the destination system. Which option should be removed from the rsync options in order not to preserve user and group ownership?
+
+-go
+-o
+-no-ownership
+-remove-owners
+49. Which option to ping enables the bypass of the routing tables?
+
+-q
+-r
+-b
+-A
+50. On which port and protocol is the first probe sent with traceroute?
+
+UDP/33434
+UDP/1337
+ICMP
+IGMP
+51. When working with tape devices, which of the following device names typically indicates the first non-rewinding SCSI tape device on the system?
+
+/dev/st0
+/dev/tape0
+/dev/nst0
+/dev/tape/st0
+52. When choosing directories to back up, which directory hierarchy should be included in order to ensure that mail files, such as user spool files containing mail, are backed up?
+
+/var
+/mail
+/etc
+/usr
+53. Which option to the patch command makes a backup of files?
+
+-d
+-b
+-s
+-c
+54. Which option to hdparm displays information such as the size in sectors and the starting offset for the drive?
+
+-e
+-w
+-h
+-g
+55. When booting into rescue mode with systemd, a message is sent to all logged-in users informing them of the impending reboot. Which option to systemctl can be used to prevent this message from displaying?
+
+––suppress
+––no-wall
+––quiet-mesg
+––no-mesg
+56. When checking an ext4 filesystem with fsck, which option can be used to display progress indicators?
+
+-p
+-f
+-C
+-d
+57. Which target for the kernel is used to provide a minimal kernel config?
+
+minconfig
+min
+tinyconfig
+configsmall
+58. Which of the following files contains the udev hardware database?
+
+/etc/udev/hwdb.cfg
+/etc/udev.d/hwdb.txt
+/etc/udev/hwdb.db
+/etc/udev/hwdb.bin
+59. Which option to systemd-delta can be used to display differences among files in the instance where files are overridden?
+
+––show-diff
+––diff
+-s
+-d
+60. Which option to the mount command mounts a partition using its UUID?
+
+-u
+-U
+-t
+-i
+

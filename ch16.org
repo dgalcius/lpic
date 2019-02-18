@@ -1,0 +1,281 @@
+Chapter 16
+Networking Configuration (Topic 205)
+THE FOLLOWING LPIC-2 EXAM TOPICS ARE COVERED IN THIS CHAPTER:
+
+205.1 Basic networking configuration
+Utilities to configure and manipulate Ethernet network interfaces
+Configuring basic access to wireless networks
+The following is a partial list of the used files, terms and utilities:
+ip
+ifconfig
+route
+arp
+iw
+iwconfig
+iwlist
+205.2 Advanced network configuration
+Utilities to manipulate routing tables
+Utilities to configure and manipulate Ethernet network interfaces
+Utilities to analyse the status of the network devices
+Utilities to monitor and analyse the TCP/IP traffic
+The following is a partial list of the used files, terms and utilities:
+ip
+ifconfig
+route
+arp
+ss
+netstat
+lsof
+ping, ping6
+nc
+tcpdump
+nmap
+205.3 Troubleshooting network issues
+Location and content of access restriction files
+Utilities to configure and manipulate Ethernet network interfaces
+Utilities to manage routing tables
+Utilities to list network states.
+Utilities to gain information about the network configuration
+Methods of information about the recognised and used hardware devices
+System initialisation files and their contents (Systemd and SysV init)
+Awareness of NetworkManager and its impact on network configuration
+The following is a partial list of the used files, terms and utilities:
+ip
+ifconfig
+route
+ss
+netstat
+/etc/network/, /etc/sysconfig/network-scripts/
+ping, ping6
+traceroute, traceroute6
+mtr
+hostname
+System log files such as /var/log/syslog, /var/log/messages and the systemd journal
+dmesg
+/etc/resolv.conf
+/etc/hosts
+/etc/hostname, /etc/HOSTNAME
+/etc/hosts.allow, /etc/hosts.deny
+1. When using the ip command, which protocol family is used as the default if not otherwise specified?
+
+TCPIP
+IP
+INET
+ARP
+2. Which of the following commands changes the MAC address of eth0?
+
+ifmac eth0
+ifconfig eth0 hw ether
+ifconfig eth0 mac
+ifconfig eth0 hw mac
+3. You are using the route command to view routes. However, name resolution is taking a long time and causing a delay in the response from the route command. Which option to route can be added to cause it to not perform name resolution?
+
+-d
+-e
+-f
+-n
+4. You have replaced a device on the network but used the IP address from another active device. Which command can be run to remove the MAC address entry from your computer so that it performs the address resolution again?
+
+arp -d
+netstat -rn
+hostname
+dig
+5. Which of the following commands displays information such as link status about the wireless device wlan0?
+
+iw dev wlan0 link
+wlan0 list
+iw wlan0 -l
+iw dev link
+6. Which command is used for setting parameters such as the essid, channel, and other related options for a wireless device?
+
+ifconfig
+iwconfig
+wlancfg
+iconf
+7. Which of the following commands can be used to scan for available wireless networks?
+
+iwlist get
+iwconfig scan
+iwlist scan
+iw-scan
+8. When looking to parse the output of the ip command, which option can be set to remove newlines such that the output could be piped to the grep command?
+
+-n
+-o
+-l
+-f
+9. You need to set the MTU to a specific value for a network interface. Which option to ifconfig facilitates this?
+
+-mtu
+mtu
+metric
+addrmtu
+10. Which of the following commands creates a reject route for the network 172.16.3.0/24?
+
+route del 172.16.3.0/24
+route add -net 172.16.3.0 netmask 255.255.255.0 reject
+route del -net 172.16.3.0 netmask 255.255.255.0
+route del default
+11. Which option to the arp command creates a new entry for a given IP address to a MAC address pair?
+
+-s
+-c
+-d
+--add
+12. Which of the following commands shows network sockets and their allocated memory?
+
+ss -m
+mpas
+mem
+free
+13. Which options to netstat shows both active and listening TCP sockets and connections?
+
+-tu
+-f
+-an
+-ta
+14. Which of the following commands lists open files belonging to all processes except those owned by the user bind?
+
+lsof -i
+lsof -u bind
+lsof -u ^bind
+lsof | grep bind
+15. When troubleshooting a potential hardware problem, you need to determine which physical interface is being used for a certain address. One way to accomplish this is with the ping command in order to monitor the activity lights on the device. Which of the following options to ping will flood the interface with ECHO_REQUEST packets?
+
+-e
+-a
+-c
+-f
+16. Which of the following commands can be used to test network connectivity at the TCP level instead of Telnet?
+
+netstat
+nc
+nettest
+ping
+17. Which option to tcpdump displays a list of available interfaces on which tcpdump can operate?
+
+-a
+-d
+-D
+-i
+18. Which option to nmap will cause it always to perform name resolution?
+
+-n
+-R
+-b
+-a
+19. Which command provides a method for sending ICMP requests for IPv6?
+
+ping6
+pingv6
+tracert
+6ping
+20. Which of the following commands displays information about addresses, specifically only IPv6 addresses, currently in use on the computer?
+
+ip addr
+ip -6 addr
+ip6add
+ipv6addr
+21. Which of the following commands will disable ARP on the interface eth0?
+
+ifconfig eth0 -arp
+ip eth0 noarp
+ifconfig eth0 noarp
+if eth0 disable arp
+22. Which option to the route command forces the kernel to use the specified device for the route rather than attempting to determine the correct device?
+
+inet
+addr
+dev
+device
+23. Which option to the ss command shows the process IDs associated with the socket?
+
+-l
+-a
+-p
+-f
+24. Which option to netstat displays interface information in a table-like format that might be suitable for use with scripting?
+
+-i
+-r
+-t
+-l
+25. On a Debian system, within which directory hierarchy will you find configuration information and directories to hold scripts to be run when an interface is brought up or taken down?
+
+/etc/netconf
+/etc/netconfig
+/etc/net.conf.d
+/etc/network
+26. Which option to traceroute causes the command to use ICMP for requests?
+
+-T
+-A
+-I
+-i
+27. Which of the following commands provides a live traceroute of the route between two hosts, updating the information for each hop in near real time?
+
+traceroute --live
+mtr
+route -update
+liveroute
+28. Which programmatic function is used by the hostname command internally?
+
+getaddr
+gethost
+gethostname
+getname
+29. Which of the following commands will examine the system log for information regarding DHCP activity?
+
+grep -i dhcp /var/log/syslog
+grep -v dhcp /var/log/syslog
+grep -vi dhcp /var/log/kern.log
+dmesg | grep dhcp
+30. Which of the following characters are valid for hostnames in /etc/hosts?
+
+Alphanumerics, minus, underscore, and dot
+Alphanumerics, minus, and dot
+Alphanumerics and dot
+Alphanumerics
+31. Which of the following configuration lines in /etc/resolv.conf enables debugging?
+
+debug
+options debug
+option debug
+enable-debug
+32. Which option to dmesg clears the contents after they have been read once?
+
+-C
+-c
+-a
+-e
+33. Which of the following commands views systemd journal entries for the NetworkManager unit?
+
+systemd NetworkManager
+systemd NetworkCtl
+systemctl NetworkManager
+systemctl -u NetworkManager
+34. Which file is read at boot to set the local computer’s hostname?
+
+/etc/hostname
+/etc/hosts
+/etc/localhost
+/etc/networkhost
+35. Which of the following directories on a Red Hat system contains network interface configuration information?
+
+/etc/network-scripts
+/etc/system/network
+/etc/sysconfig/network-scripts
+/etc/sysconfig/net.d
+36. Which traceroute command is used exclusively for IPv6 route traces?
+
+trace6
+traceroute6
+tracert6
+6trace
+37. Which wildcard can be used in /etc/hosts.allow to specify a match for a host whose name does not match its IP address?
+
+*
+ALL
+PARANOID
+NAMEMATCH
+

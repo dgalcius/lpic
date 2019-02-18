@@ -1,0 +1,276 @@
+Chapter 21
+Network Client Management (Topic 210)
+THE FOLLOWING LPIC-2 EXAM TOPICS ARE COVERED IN THIS CHAPTER:
+
+210.1 DHCP configuration
+DHCP configuration files, terms and utilities
+Subnet and dynamically-allocated range setup
+Awareness of DHCPv6 and IPv6 Router Advertisements
+The following is a partial list of the used files, terms and utilities:
+dhcpd.conf
+dhcpd.leases
+DHCP Log messages in syslog or systemd journal
+arp
+dhcpd
+radvd
+radvd.conf
+210.2 PAM authentication
+PAM configuration files, terms and utilities
+passwd and shadow passwords
+Use sssd for LDAP authentication
+The following is a partial list of the used files, terms and utilities:
+/etc/pam.d/
+pam.conf
+nsswitch.conf
+pam_unix, pam_cracklib, pam_limits, pam_listfile, pam_sss
+sssd.conf
+210.3 LDAP client usage
+LDAP utilities for data management and queries
+Change user passwords
+Querying the LDAP directory
+The following is a partial list of the used files, terms and utilities:
+ldapsearch
+ldappasswd
+ldapadd
+ldapdelete
+210.4 Configuring an OpenLDAP server
+OpenLDAP
+Directory based configuration
+Access Control
+Distinguished Names
+Changetype Operations
+Schemas and Whitepages
+Directories
+Object IDs, Attributes and Classes
+The following is a partial list of the used files, terms and utilities:
+slapd
+slapd-config
+LDIF
+slapadd
+slapcat
+slapindex
+/var/lib/ldap/
+loglevel
+ 
+1. Which option within dhcpd.conf configures how dynamic DNS updates are done?
+
+ddns-update-style
+ddns-updates
+ddns-server
+ddns-enable
+2. Which of the following subnet definitions for DHCP can be used with private networks with at least 100 addresses?
+
+subnet 192.168.1.0 netmask 255.255.255.128
+subnet 192.168.1.0 size 100
+subnet 192.168.1.0 size 102
+subnet 192.168.1.0/26
+3. When creating a DHCP reservation, which option within a host stanza is used to indicate the MAC address for the host?
+
+mac
+hardware ethernet
+mac address
+hw-address
+4. Within which directory are individual configuration files stored for the Pluggable Authentication Module mechanism?
+
+/etc/pamd
+/etc/pam
+/etc/pam.d
+/etc/pam.conf.d
+5. On which port does the slapd LDAP daemon listen for connections?
+
+389
+3389
+3306
+110
+6. Which of the following commands is used to add entries to the OpenLDAP database?
+
+ldapd
+adduser
+addldap
+ldapadd
+7. On which ports does DHCP traffic communicate?
+
+50 and 51
+143 and 144
+67 and 68
+530 and 531
+8. Which of the following commands can be used to help with recovery of a corrupt OpenLDAP database?
+
+openldap-recover
+oreco
+slapd-recover
+slapd_db_recover
+9. Which of the following configuration lines sets the domain suffix search order to example.com followed by example.org within a DHCP configuration?
+
+open domain-search "example.com", "example.org";
+option domain-search "example.com, example.org";
+option domain-search "example.com", "example.org";
+option domain-suffix "example.com", "example.org";
+10. Within which directory are databases stored for OpenLDAP?
+
+/var/lib/ldap
+/var/cache/openldap
+/var/share/ldap
+/usr/share/openldap
+11. Which PAM module prevents logins from accounts other than root when the file /etc/nologin exists?
+
+pam_login.so
+pam_preventlogin.so
+pam_nologin.so
+pam_logindef.so
+12. When importing entries into the LDAP database using ldapadd -f <filename>, what should the format of the file be?
+
+LDAP
+TXT
+CSV
+LDIF
+13. Which PAM module is responsible for normal or standard password authentication?
+
+pam_auth.so
+pam_login.so
+pam_unix.so
+pam_standardlogin.so
+14. Which option within radvd.conf is used to limit the nodes to which advertisements will be sent?
+
+cnodes
+clients
+nodes
+lnodes
+15. Which debug level for slapd is used to provide debugging of configuration file processing?
+
+1
+64
+8
+0
+16. Which option in dhcpd.conf specifies the maximum amount of time that a client is allowed to have a DHCP lease?
+
+max-time
+max-lease-time
+lease-max
+maximum-lease-duration
+17. When viewing DHCP-related messages through syslog or the systemd journal, you see the message DHCPDISCOVER followed by a MAC address and an interface. Which of the following best describes the DHCPDISCOVER message being logged?
+
+The server is sending out messages to discover all clients.
+The client is sending a message to begin the process of obtaining an IP address.
+The server is responding to a message from a client.
+The client is responding to an offer from the server.
+18. Which of the following lines in /etc/nsswitch.conf uses local files followed by LDAP for authentication?
+
+passwd: files ldap
+passwd [files ldap]
+auth: local ldap
+auth: localfiles ldap
+19. Which PAM module provides a mechanism for checking and enforcing the strength of passwords?
+
+pam_passwdstr.so
+pam_cracklib.so
+pam_libpasswd.so
+pam_strpass.so
+20. You need to specify an alternate configuration file for sssd. Which option can be used on the sssd command line in order to point to a new configuration file?
+
+-f
+-c
+-a
+-m
+21. On which port does DHCP failover communicate?
+
+67
+68
+647
+389
+22. Which option with dhcpd.conf defines the default gateway that will be sent with the DHCP lease?
+
+default-gw
+default-gateway
+routers
+default-route
+23. Which command creates an LDIF file from the current LDAP database?
+
+slapdump
+ldapdump
+slapcat
+catldap
+24. Which PAM module is responsible for enforcing limits such as the maximum number of logins and CPU time used?
+
+pam_enforce.so
+pam_limittest.so
+pam_max.so
+pam_limits.so
+25. Which of the following commands is used to re-create indexes based on existing slapd databases?
+
+ldapind
+ldapindex
+slapindex
+indexldap
+26. What will be logged with the loglevel set to 0x10 in a slapd.conf configuration file?
+
+No debugging
+Trace debugging
+Stats logging
+Packets sent and received
+27. When using slapadd for a large import, an error occurs at roughly 90 percent completion. Which option to slapadd enables specification of a line number from which the import will be restarted?
+
+-l
+-f
+-q
+-j
+28. Which command is recommended for configuration of slapd for OpenLDAP versions 2.3 and later?
+
+slapd-conf
+config-slapd
+openldap-config
+slapd-config
+29. When working with an LDIF file to make changes to the LDAP database, which changetype is used to create a new database entry?
+
+create
+add
+addmod
+insert
+30. When working with ldapsearch, which of the following option sets creates output in LDIFv1 format without comments or versioning information?
+
+-L
+-LLL
+-cal
+-e
+31. On which port does LDAP over SSL listen for connections?
+
+389
+443
+636
+3128
+32. Which of the following PAM modules can be used for authorization and authentication scenarios using external files?
+
+pam_authfiles.so
+pam_listfiles.so
+pam_filesauth.so
+pam_fileauth.so
+33. Which option to ldapmodify is used to perform a dry run, where no changes are made to the database?
+
+-n
+-d
+-l
+-e
+34. What is the default filter for ldapsearch when no filter is provided?
+
+(*)
+(objectClass=*)
+(class=*)
+(list*)
+35. Which PAM module is used for integration with the SSSD system?
+
+pam_sss.so
+pam_sssd.so
+pam_sssd_config.so
+pam_sss_mod.so
+36. Which option within sssd.conf sets the URI for the LDAP server?
+
+ldap_server
+ldap_uri
+ldap_connect
+ldap_use
+37. Which of the following configuration lines causes the DHCP server to refuse address requests from clients that are unknown to the server?
+
+unknown-clients: deny;
+deny unknown-clients;
+clients-deny: unknown
+list-clients-deny

@@ -977,9 +977,14 @@ Chapter 11: Capacity Planning (Topic 200)
 
 3. D. The vmstat command is used to display extended information about performance including blocks in and out. The iptraf command is used to provide network-level monitoring, and the other two commands listed are not valid.
 
-4. C. The iotop command is used to monitor disk usage, such as reads and writes on a per-process basis in real time. The top command does not provide disk usages, and iostat does not provide information in a per-process manner. Finally, free provides aggregate information on memory.
+4. C. The iotop command is used to monitor disk usage, such as reads and writes on a per-process basis in real time. 
+      The top command does not provide disk usages, and iostat does not provide information in a per-process manner. 
+       Finally, free provides aggregate information on memory.
 
-5. D. Nagios provides advanced monitoring capabilities appropriate for the scenario described. Nagios works using various plugins that monitor numerous aspects of devices and systems. ntop and mrtg both provide graphical statistics but do not have the alerting capabilities specified.
+5. D. Nagios provides advanced monitoring capabilities appropriate for the scenario 
+      described. Nagios works using various plugins that monitor numerous aspects of 
+      devices and systems. ntop and mrtg both provide graphical statistics 
+      but do not have the alerting capabilities specified.
 
 6. B. The w command shows a variety of useful information including load average, logged-in users, and other uptime information. The uptime command does not show who is currently logged in. There is no swap or sysinfo command.
 
@@ -1358,9 +1363,16 @@ Chapter 15: Advanced Storage Device Administration (Topic 204)
 37. D. The lspci command is used for this purpose. NVME devices are listed with the name nVME or NVMe; therefore, adding -i to grep will make the search case insensitive. You’d use this in order to ensure that the devices are detected. The other commands are not valid, with the exception of the lspci command, but you cannot grep for scsi for this scenario.
 
 Chapter 16: Networking Configuration (Topic 205)
-1. C. The ip command defaults to the INET family if not otherwise specified with the -f option. The command attempts to guess the correct family and falls back to INET. The other families listed as options for this command are not valid for use with the ip ­command.
 
-2. B. The ifconfig command is used for this purpose, followed by the interface. The hw keyword is used for the hardware address, which is then followed by the hardware class, in this case ether. That is followed by the new MAC address (not depicted in the options). The other commands are not valid.
+1. C. The ip command defaults to the INET family if not otherwise
+   specified with the -f option. 
+The command attempts to guess the correct family 
+and falls back to INET. The other families listed as options for this command are not valid for use with the ip ­command.
+
+2. B. The ifconfig command is used for this purpose, followed by the
+   interface. The hw keyword is used for the hardware address, which
+   is then followed by the hardware class, in this case ether.
+ That is followed by the new MAC address (not depicted in the options). The other commands are not valid.
 
 3. D. The -n option causes route to use numeric values only, performing no name resolution. This option is useful for the scenario described. The -e option causes the output to be in netstat format. There is no -d or -f option for the route command.
 
@@ -1372,7 +1384,11 @@ Chapter 16: Networking Configuration (Topic 205)
 
 7. C. The iwlist command can be used for this purpose, and the scan subcommand is used to look for local access points and wireless networks. The iwconfig command does not have a scan subcommand. Likewise, there is no subcommand called get for the iwlist command, and there is no iw-scan command.
 
-8. B. The -o option removes newlines from the output, thereby making the output more suitable for the grep command. The -l option specifies the number of loops for the ip addr flush command; The -f option specifies the protocol family. There is no -n option.
+8. B. The -o option removes newlines from the output, thereby making
+   the output more suitable for the grep command. 
+The -l option specifies the number of loops for the ip addr flush
+command; 
+The -f option specifies the protocol family. There is no -n option.
 
 9. B. The mtu option can be used to set the value for the maximum transmission unit (MTU) for a given interface. The metric option sets the interface metric. The other options are not valid.
 
@@ -1388,9 +1404,19 @@ Chapter 16: Networking Configuration (Topic 205)
 
 15. D. The -f option is a flood ping. This will effectively cause the interface to send and receive large amounts of traffic, usually making it easier to find on a switch. The -a option is an audible ping, emitting a sound on ping. The -c option sends a certain count of pings. There is no -e option.
 
-16. B. The netcat command provides a method for opening and communicating on both sides, server and client, for a TCP connection. The netcat command avoids some of the issues with Telnet capturing characters specific to the Telnet protocol. The netstat command does not test connectivity, and ping does not do so at the TCP level. There is no nettest command.
+16. B. The netcat command provides a method for opening and
+    communicating on both sides, server and client, for a TCP
+    connection. 
+The netcat command avoids some of the issues with Telnet capturing
+characters specific to the Telnet protocol. The netstat command does
+not test connectivity, and ping does not do so at the TCP level. There
+is no nettest command.
 
-17. C. The -D option lists the interfaces on a given computer. The -d option dumps compiled matching code, and -i selects an interface. There is no -a option.
+
+17. C. The -D option lists the interfaces on a given computer. The -d
+    option dumps compiled matching code, and -i selects an
+    interface. There is no -a option.
+
 
 18. B. The -R option requires that an attempt at name resolution be performed. The -n option does the opposite; that is, it disables name resolution. There is no -b or -a option.
 
@@ -1404,7 +1430,10 @@ Chapter 16: Networking Configuration (Topic 205)
 
 23. C. The -p option shows the process IDs associated with a given socket within the ss output. The -a option is for all sockets, while -l is for listening sockets. The -f option is used to specify the protocol family.
 
-24. A. The -i option shows interface information in a table-like format. Information such as transmit and receive bytes as well as the MTU for the interface and other information is shown. The -r option shows routes, while -l shows listening sockets. There is no -t option.
+24. A. The -i option shows interface information in a table-like
+    format. Information such as transmit and receive bytes as well as
+    the MTU for the interface and other information is shown.
+ The -r option shows routes, while -l shows listening sockets. There is no -t option.
 
 25. D. The /etc/network directory contains information on network interfaces and contains directories that further contain scripts to be executed when interfaces are brought up or down. The other directories listed do not exist.
 
@@ -1516,7 +1545,9 @@ Chapter 18: Domain Name Server (Topic 207)
 
 4. A. The -a option enables specification of the algorithm to use, while -n specifies the name type to use such as zone, host, or others. There is no -d or -e option.
 
-5. B. The named-checkzone command examines a zone file for obvious syntax errors that would prevent BIND from using the file. The named-compilezone file does the same thing as named-checkzone but sends the output directly to a file instead.
+5. B. The named-checkzone command examines a zone file for obvious
+   syntax errors that would prevent BIND from using the file. 
+  The named-compilezone file does the same thing as named-checkzone but sends the output directly to a file instead.
 
 6. A. The lowest priority number wins for MX records, thereby making 0 the highest priority MX record for the domain.
 
@@ -1603,7 +1634,11 @@ Chapter 19: HTTP Services (Topic 208)
 
 10. C. It can be desirable at times not to display the version of Apache in use. Some say that doing so might help security. However, this type of “security through obscurity” may not be entirely effective.
 
-11. C. Server Name Indication, or SNI, facilitates serving multiple virtual hosts from the same IP address even when SSL is used. Without SNI, each SSL-based virtual host would require its own IP address. The other technologies are not valid for this scenario.
+11. C. Server Name Indication, or SNI, facilitates serving multiple
+    virtual hosts from the same IP address even when SSL is
+    used. Without SNI, each SSL-based virtual host would require its
+    own IP address. 
+The other technologies are not valid for this scenario.
 
 12. A. The SSLCACertificateFile directive enables specification of a single PEM file containing CA certificates for client authentication.
 
@@ -1633,7 +1668,15 @@ Chapter 19: HTTP Services (Topic 208)
 
 25. C. The AccessFileName directive can be used to set the access filename to something other than .htaccess.
 
-26. B. Apache explains within the documentation that higher performance is achieved by storing the directives related to user authentication within the main server configuration when possible. The only reason not to do this is so that the authentication directives are accessible by the user. There is no scenario to store user authentication configuration information in a mod_rewrite block or in a module, as was the case for two of the four options for this question.
+26. B. Apache explains within the documentation that higher
+    performance is achieved by storing the directives related to user
+    authentication within the main server configuration when
+    possible. 
+The only reason not to do this is so that the authentication
+directives are accessible by the user. 
+There is no scenario to store user authentication configuration
+information in a mod_rewrite block or in a module, 
+as was the case for two of the four options for this question.
 
 27. D. The AuthGroupFile directive facilitates the scenario described. Users must be authenticated, and then a directory or other resource can be associated with the group file to enable users in the file to access the resource. The other directives shown are not valid.
 
@@ -1643,7 +1686,11 @@ Chapter 19: HTTP Services (Topic 208)
 
 30. C. The -c option creates a new file. The -b option is batch mode. The -e and -f options do not exist for htpasswd.
 
-31. A. Log format sequences begin with a percent sign, and %D logs the time taken to service the request in microseconds. The %T sequence logs the time taken to service the request, but it requires a preceding unit of time to log. The %t sequence is the time of day when the request was received.
+31. A. Log format sequences begin with a percent sign, and %D logs the
+    time taken to service the request in microseconds. 
+The %T sequence logs the time taken to service the request, 
+but it requires a preceding unit of time to log. 
+The %t sequence is the time of day when the request was received.
 
 32. B. The Alias directive is used for this purpose. The format calls for the destination followed by the location to be aliased, thereby making option B correct. There is no Connect directive in Apache.
 
@@ -1809,6 +1856,7 @@ account required pam_nologin. so
 37. B. The deny unknown-clients configuration directive will cause the DHCP server to deny addresses when a client requests an address through DHCP. The other options shown are not valid.
 
 Chapter 22: E-Mail Services (Topic 211)
+
 1. A. The postsuper command is used for management of various items with Postfix, including deletion of individual messages from the mail queue. The other commands will not work for the purpose described.
 
 2. C. The /var/spool/postfix directory contains directories and files related to the mail queue for Postfix. The other directories listed are not valid for this scenario.
@@ -1835,7 +1883,8 @@ Chapter 22: E-Mail Services (Topic 211)
 
 13. D. The postcat command shows the contents of a message from the Postfix queue. The other commands shown are not valid.
 
-14. D. The doveadm command is used for this solution. The option called who produces a list of the users who are currently logged in, their PIDs, and their IP addresses. There is no list option for doveadm or dovecot, and likewise there is no users option for the dovecot command.
+14. D. The doveadm command is used for this solution. The option called who produces a list of the users who are currently logged in, their PIDs, and their IP addresses. 
+There is no list option for doveadm or dovecot, and likewise there is no users option for the dovecot command.
 
 15. B. The discard keyword is used to specify that a message should be deleted. It is usually followed by the stop keyword in order to indicate that no further processing needs to be done for that message.
 
@@ -1843,21 +1892,26 @@ Chapter 22: E-Mail Services (Topic 211)
 
 17. C. The redirect action will be used but must be accompanied by the :copy keyword in order to retain a copy of the message. There are no forward or :duplicate keywords in Sieve.
 
-18. B. The :days keyword sets how frequently the vacation auto-responder will reply to a given sender. For example, setting :days 1 means that the same sender will receive a vacation auto-response once a day at most. The other keywords are not valid.
+18. B. The :days keyword sets how frequently the vacation auto-responder will reply to a given sender. 
+For example, setting :days 1 means that the same sender will receive a vacation auto-response once a day at most. The other keywords are not valid.
 
-19. C. The qshape command displays information regarding the number and age of the messages in the Postfix incoming and active queues. Other queues can be viewed using the command as well. The other commands shown as options for this question are not valid.
+19. C. The qshape command displays information regarding the number and age of the messages in the Postfix incoming and active queues. 
+Other queues can be viewed using the command as well. The other commands shown as options for this question are not valid.
 
 20. A. The doveconf command displays configuration parameters related to Dovecot, including the setting name and its value. The dovecot command is valid, as is the doveadm command. However, the options shown for both of those commands are not valid. There is no doveconfig command.
 
 21. A. There is an implicit keep action if no other action takes precedence or otherwise handles the e-mail within a set of actions. There is a discard action, but it is not the default. There is no action called shred or forward.
 
-22. B. The mynetworks parameter sets the networks or hosts that are allowed to relay through the Postfix server. The other options are not valid. Note that there are parameters related to relaying, such as relayhost, but those are typically used to set the destination for relaying rather than allow relaying through the server.
+22. B. The mynetworks parameter sets the networks or hosts that are allowed to relay through the Postfix server. The other options are not valid. Note that there are parameters related to relaying, such as relayhost, 
+but those are typically used to set the destination for relaying rather than allow relaying through the server.
 
 23. D. The doveadm command, when used with the auth option, tests authentication for a given user. There is a dovecot command, but the command does not have auth or testauth options. Likewise, there is no testauth option to doveadm.
 
 24. D. The m4 command compiles a native Sendmail configuration into the final Sendmail configuration file. A standard redirect is used to send the output to its final destination.
 
-25. A. The postconf command is used for this purpose, and when given the -d option it displays all parameters in the current Postfix configuration. Note that the only other command shown that is valid is postfix, but that command uses -c to specify the configuration directory and not for the purpose described in the scenario for this question.
+25. A. The postconf command is used for this purpose, and when given the -d option it displays all parameters in the current Postfix configuration. 
+Note that the only other command shown that is valid is postfix, but that command uses -c to specify the configuration directory and 
+not for the purpose described in the scenario for this question.
 
 26. C. The file /var/log/mail.err contains errors related to mail delivery. However, on some systems, mail-related errors may go to a different log such as /var/log/mail.log or /var/log/mail.info or similar.
 

@@ -3,17 +3,19 @@ E-Mail Services (Topic 211)
 THE FOLLOWING LPIC-2 EXAM TOPICS ARE COVERED IN THIS CHAPTER:
 
 211.1 Using e-mail servers
+
 Configuration files for postfix
 Basic TLS configuration for postfix
 Basic knowledge of the SMTP protocol
 Awareness of sendmail and exim
 The following is a partial list of the used files, terms and utilities:
 Configuration files and commands for postfix
-/etc/postfix/
+//etc/postfix/
 /var/spool/postfix/
 sendmail emulation layer commands
-/etc/aliases
-mail-related logs in /var/log/
+//etc/aliases
+mail-related logs in //var/log/
+
 211.2 Managing E-Mail Delivery
 Understanding of Sieve functionality, syntax and operators
 Use Sieve to filter and sort mail with respect to sender, recipient(s), headers and size
@@ -22,6 +24,7 @@ The following is a partial list of the used files, terms and utilities:
 Conditions and comparison operators
 keep, fileinto, redirect, reject, discard, stop
 Dovecot vacation extension
+
 211.3	Managing Mailbox Access
 Dovecot IMAP and POP3 configuration and administration
 Basic TLS configuration for Dovecot
@@ -38,216 +41,252 @@ postsuper -d
 postmaster
 postfix -d
 postdel
+
 2. Within which directory hierarchy are queue-related messages stored for Postfix?
 
 /var/mqueue
 /var/spool/mailq
 /var/spool/postfix
 /var/postfix
+
 3. Which format should the certificate and key be in for a Postfix TLS configuration?
 
 PKCS
 PEM
 TLS
 SSL
+
 4. Which configuration keyword for Sieve is responsible for moving mail into the specified mailbox?
 
 filein
 moveinto
 mailmover
 fileinto
+
 5. Within which directory are configuration files stored for the Postfix e-mail server?
 
 /etc/postfix.d
 /etc/postfix.conf.d
 /etc/mail/postfix
 /etc/postfix
+
 6. Which of the following files is used as a user-based configuration file for Procmail?
 
-/home/procmail.conf
+~/home/procmail.conf~
 ~/.procmailrc
 /etc/procmail.conf
 ~/procmail.conf
+
 7. Which of the following definitions in /etc/aliases will deliver mail destined to root to two e-mail addresses, admin@example.com and webmaster@example.com?
 
 [root] = admin@example.com, webmaster@example.com
 root: admin webmaster
 root: admin, webmaster
 root: admin@example.com, webmaster@example.com
+
 8. Which of the following commands displays the mail queue for a Postfix server?
 
 mailqueue
 qmail
 mailq
 mail-queue
+
 9. Which of the following commands causes Postfix to process the mail queue immediately?
 
 postqueue -f
 mailq -f
 postqueue -a
 postmailq -process
+
 10. Which of the following commands deletes all messages from the mail queue with Postfix?
 
 postsuper -d mqueue
 postsuper -d ALL
 postsuper delete-all
 postsuper -D
+
 11. Which of the following commands can be executed in order to rebuild the /etc/aliases database?
 
 newaliases
 realias
 rebuildaliases
 realiases
+
 12. Which Sieve action retains the message in the mailbox?
 
 remain
 keep
 store
 file
+
 13. Which of the following commands views the contents of a message that exists in the Postfix queue?
 
 postshow
 postless
 postmore
 postcat
+
 14. Which command can be used to view the currently logged-in users for the Dovecot server?
 
 doveadm list
 dovecot list
 dovecot users
 doveadm who
+
 15. Which of the following deletes a message that matches on a condition with Sieve?
 
 delete
 discard
 remove
 kill
+
 16. Which of the following commands is used to view the pending messages queue on a Postfix server?
 
 postqueue -p
 postconf -pending
 postqueue -f
 postsuper pending
+
 17. Which of the following action lines in a Sieve configuration forwards a copy of the message to admin@example.com and keeps a copy for further processing?
 
 redirect "admin@example.com";
 forward "admin@example.com";
 redirect :copy "admin@example.com";
 forward :duplicate "admin@example.com";
+
 18. Which configuration parameter within the vacation Sieve functionality is used to specify how often a vacation reply should be sent to the same sender?
 
 :freq
 :days
 :often
 :replyfrequency
+
 19. Which Postfix-related command is used to provide an overview of the number of messages in the incoming and active queues arranged by age?
 
 queuelist
 postq
 qshape
 queueshow
+
 20. Which of the following commands displays the current Dovecot configuration?
 
 doveconf
 doveconfig
 dovecot --list
 doveadm conf
+
 21. When working with Sieve, which action is performed implicitly when no other action takes precedence?
 
 keep
 discard
 shred
 forward
+
 22. Which configuration parameter for Postfix sets the networks that are allowed to relay through the server?
 
 relaynet
 mynetworks
 networkrelay
 relnet
+
 23. Which of the following commands tests authentication for a user of a Dovecot server?
 
 dovecot -testauth
 doveadm testauth
 dovecot auth
 doveadm auth
+
 24. Which of the following commands compiles a Sendmail configuration file in its native language to a standard Sendmail configuration file at /etc/sendmail.cf?
 
 makemap sendmail.mc > /etc/sendmail.cf
 m1 sendmail.mc > /etc/sendmail.cf
 gcc sendmail.mc > /etc/sendmail.cf
 m4 sendmail.mc > /etc/sendmail.cf
+
 25. Which of the following commands views all parameters related to a Postfix configuration?
 
 postconf -d
 postmaster -config
 postfix -c
 postc -a
+
 26. Within which file will you find errors related to delivery of mail on a Postfix server?
 
 /var/log/mail
 /var/log/postfix.log
 /var/log/mail.err
 /var/log/postfix.err
+
 27. Which option is used to create a listening port stanza within a Dovecot configuration?
 
 inet_port
 inet_listener
 listening_port
 listener
+
 28. On which port does SMTP operate by default?
 
 25
 2525
 110
 143
+
 29. You need to find the mail queue path on a Postfix server. You’re using postconf -d to view all parameters. Which configuration parameter contains the mail queue path on a Postfix server?
 
 mqueue
 queue_dir
 mailq_path
 mqueue_path
+
 30. When testing SMTP communications between a client and a server, you need to begin the conversation. Which of the following lines shows the beginning of an SMTP conversation using Extended Hello syntax from mail.example.com?
 
 BEGIN mail.example.com
 SMTP mail.example.com
 HELO mail.example.com
 EHLO mail.example.com
+
 31. Which of the following keywords defines an alternate condition when the original if condition fails in Sieve?
 
 else if
 elsif
 elseif
 alt
+
 32. Which Sieve test examines an object such as an address to determine if there is a string within it?
 
 :grep
 :contains
 :has
 :lookin
+
 33. Which configuration option specifies the maximum number of authentication processes that can be active within a Dovecot server?
 
 process_limit
 max_proc
 proc_max
 auth_proc_max
+
 34. When examining an address in Sieve, which keyword attempts to look at just the domain name portion of the address?
 
 :domainname
 :afterat
 :last
 :domain
+
 35. On which port does Dovecot listen for SSL/TLS-based IMAP or IMAPS?
 
 143
 993
 995
 110
+
 36. Which of the following files is used as the default configuration file for Exim 4 on a Debian system?
 
 /etc/exim/exim4.conf
 /etc/exim.conf
 /etc/exim.configure
 /etc/exim/configure
+
 37. Which Postfix configuration option is used with the postscreen server to set the TLS security level?
 
 postscreen_tls

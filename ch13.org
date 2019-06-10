@@ -106,7 +106,10 @@ driverload
 initrd
 initdrv
 
-7. When booting a system, you receive an error similar to “No init found” and are then placed at an initramfs prompt. You need to check the hard drive for errors. Which of the following commands performs an error check on a hard drive partition in Linux?
+7. When booting a system, you receive an error similar to “No init
+   found” and are then placed at an initramfs prompt. 
+   You need to check the hard drive for errors. Which of the following
+   commands performs an error check on a hard drive partition in Linux?
 
 defrag
 fsck

@@ -50,7 +50,9 @@ resource exhaustion
 -d
 -p
 
-2. When using iptraf for monitoring over an ssh connection, all of the traffic from your ssh session is showing up within the monitor. Which of the following is used to exclude and/or include traffic from the iptraf monitor?
+2. When using iptraf for monitoring over an ssh connection, all of the
+   traffic from your ssh session 
+is showing up within the monitor. Which of the following is used to exclude and/or include traffic from the iptraf monitor?
 
 Area
 Filter
@@ -71,7 +73,10 @@ top
 iotop
 free
 
-5. You need to deploy a monitoring solution that enables alerts along with advanced scripted responses based on configurable performance conditions. Which of the following software packages performs these tasks?
+5. You need to deploy a monitoring solution that enables alerts along
+   with advanced scripted 
+responses based on configurable performance conditions. 
+Which of the following software packages performs these tasks?
 
 MySQL
 ntop
@@ -92,7 +97,8 @@ free
 pstat
 swap
 
-8. Which of the following describes a method for changing the sort order when using the top command such that the highest memory utilizers will be shown at the top of the list?
+8. Which of the following describes a method for changing the sort
+ order when using the top command such that the highest memory utilizers will be shown at the top of the list?
 
 Within top, type o and then select mem.
 Within top, press Shift+F, scroll to %MEM, press s to select, and then press q to quit.
@@ -197,7 +203,9 @@ l
 f
 o
 
-23. When working in a virtual server environment, which column within iostat output shows the amount (percentage) of time spent in an involuntary wait scenario due to the hypervisor?
+23. When working in a virtual server environment, which column within
+    iostat output 
+shows the amount (percentage) of time spent in an involuntary wait scenario due to the hypervisor?
 
 proc
 wait
@@ -260,7 +268,9 @@ lsof -i -80
 -m
 -o m
 
-32. When viewing information with vmstat, you notice that there are two processes in the b column, indicating uninterruptible sleep. How do you find which specific processes are currently in uninterruptible sleep mode?
+32. When viewing information with vmstat, you notice that there are 
+two processes in the b column, indicating uninterruptible sleep. 
+How do you find which specific processes are currently in uninterruptible sleep mode?
 
 Add the -n option to vmstat.
 Use ps and look for D in the Stat column.

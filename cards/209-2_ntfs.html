@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>NFS server configuration</title>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/css/theme/moon.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">NFS server configuration</h1><p class="date">Created: 2019-06-10 Mon 16:05</p>
+</section>
+
+<section>
+<section id="slide-org19f9c71">
+<h2 id="org19f9c71">NFS3 protocols</h2>
+<ul>
+<li>UDP</li>
+<li>TCP</li>
+<li>RPC -  <i>Remote Procedure Call</i></li>
+<li>NLM -  <i>Network Lock Manager</i></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgb78ee31">
+<h2 id="orgb78ee31">Daemons and kernel services</h2>
+<ul>
+<li>idmapd - <i>Map ID</i></li>
+<li>lockd</li>
+<li>mountd</li>
+<li>nfsd</li>
+<li>portmapper (rpcbind)</li>
+<li>rquotad</li>
+<li>statd</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org398aa71">
+<h2 id="org398aa71">Red Hat packages</h2>
+<ul>
+<li>nfs-utils</li>
+<li>nfs-utils-lib</li>
+<li>rpcbind</li>
+<li>portmap</li>
+
+</ul>
+<pre  class="example">
+# yum install nfs-utils rpcbind portmap
+</pre>
+
+</section>
+</section>
+<section>
+<section id="slide-org26bfbcd">
+<h2 id="org26bfbcd">Debian packages</h2>
+<ul>
+<li>nfs-kernel-server</li>
+<li>nfs-common</li>
+<li>rpcbind</li>
+<li>portmap</li>
+
+</ul>
+<pre  class="example">
+# apt-get install nfs-kernel-server nfs-common
+</pre>
+
+</section>
+</section>
+<section>
+<section id="slide-orgca1377b">
+<h2 id="orgca1377b">/etc/exports (server)</h2>
+<ul>
+<li>/etc/exports</li>
+
+</ul>
+<pre  class="example">
+/srv/homes hostname1(rw,sync,no_subtree_check)
+/nfsdata *(rw)
+/nfsdata2 192.168.1.45(rw) 
+</pre>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org9c2493d">
+<h2 id="org9c2493d">Utils</h2>
+<p>
+reread configuration:
+</p>
+<pre  class="example">
+$ sudo exports -r 
+</pre>
+
+<p>
+show nfs mounts:
+</p>
+<pre  class="example">
+showmount -e localhost
+</pre>
+
+<pre  class="example">
+rpcinfo
+</pre>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/lib/js/head.min.js"></script>
+<script src="./reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

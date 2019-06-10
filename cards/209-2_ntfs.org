@@ -1,0 +1,66 @@
+#+TITLE: NFS server configuration
+#+AUTHOR: 
+#+REVEAL_TRANS: linear
+#+OPTIONS: num:nil toc:nil
+
+* NFS3 protocols
+
+  - UDP
+  - TCP
+  - RPC -  /Remote Procedure Call/
+  - NLM -  /Network Lock Manager/
+
+* Daemons and kernel services
+
+  - idmapd - /Map ID/
+  - lockd    
+  - mountd
+  - nfsd
+  - portmapper (rpcbind)
+  - rquotad
+  - statd 
+
+* Red Hat packages
+
+  - nfs-utils
+  - nfs-utils-lib
+  - rpcbind
+  - portmap
+#+BEGIN_SRC 
+        # yum install nfs-utils rpcbind portmap
+#+END_SRC
+
+* Debian packages
+
+  - nfs-kernel-server
+  - nfs-common
+  - rpcbind
+  - portmap
+#+BEGIN_SRC 
+        # apt-get install nfs-kernel-server nfs-common
+#+END_SRC
+
+* /etc/exports (server)
+
+#+BEGIN_SRC 
+/srv/homes hostname1(rw,sync,no_subtree_check)
+/nfsdata *(rw)
+/nfsdata2 192.168.1.45(rw) 
+#+END_SRC
+
+
+* Utils
+
+reread configuration:
+#+BEGIN_SRC 
+$ sudo exports -r 
+#+END_SRC
+
+show nfs mounts:
+#+BEGIN_SRC 
+showmount -e localhost
+#+END_SRC
+
+#+BEGIN_SRC 
+rpcinfo
+#+END_SRC

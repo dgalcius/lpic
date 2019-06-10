@@ -1,0 +1,7 @@
+#+TTILE: Samba server configuration
+#+AUTHOR: 
+#+REVEAL_TRANS: linear
+#+OPTIONS: num:nil toc:nil
+
+* Configuration
+

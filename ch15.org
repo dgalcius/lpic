@@ -289,7 +289,9 @@ scsiparam
 sdlist
 sdparm
 
-36. Which of the following directories contains configuration information for Fibre Channel over Ethernet (FCoE) on Linux?
+36. Which of the following directories contains configuration
+    information 
+    for Fibre Channel over Ethernet (FCoE) on Linux?
 
 /etc/fcoe
 /etc/fibrecoe

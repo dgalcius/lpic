@@ -69,7 +69,9 @@ udevmonitor
 udevadm monitor
 /etc/udev/
 
-1. You are upgrading the kernel that has been previously compiled on the same server. Which of the following commands incorporates the contents of the existing kernel configuration into the new kernel?
+1. You are upgrading the kernel that has been previously compiled on
+   the same server. 
+Which of the following commands incorporates the contents of the existing kernel configuration into the new kernel?
 
 config ––merge
 make oldconfig
@@ -117,12 +119,13 @@ zip
 lzip
 bzip2
 bzip3
+
 8. When compiling a kernel, the final configuration is placed into which of the following files?
 
-//usr/src/linux/.kernelcfg
-//usr/src/linux/.config
-//usr/src/linux/.kconfig
-/usr/src/linux/kernel.cfg
+~/usr/src/linux/.kernelcfg~
+~/usr/src/linux/.config~
+~/usr/src/linux/.kconfig~
+~/usr/src/linux/kernel.cfg~
 
 9. Which of the following commands is used to display the currently loaded modules on a running system?
 
@@ -131,21 +134,24 @@ lsmod
 listmod
 mod ––list
 
-10. Which of the following make targets should be used in order to ensure that most compiled files from a previous compile are removed?
+10. Which of the following make targets should be used in order to ensure that 
+most compiled files from a previous compile are removed?
 
 config
 clean
 proper
 mrproper
 
-11. Which kernel configuration option enables you to add information such as a custom version number to the kernel version?
+11. Which kernel configuration option enables you to add information 
+such as a custom version number to the kernel version?
 
 CUSTVER
 LOCALVERSION
 CUSTOMVERSION
 APPENDVER
 
-12. Which of the following tools is used to create kernel modules, even if the source is outside the kernel source tree?
+12. Which of the following tools is used to create kernel modules, 
+even if the source is outside the kernel source tree?
 
 kbuild
 mkmod
@@ -285,7 +291,8 @@ rmmod
 modremove
 removemod
 
-32. If you’d like a value set with the sysctl command to take effect on boot, within which file should you place the variable and its value?
+32. If you’d like a value set with the sysctl command to take 
+effect on boot, within which file should you place the variable and its value?
 
 /etc/sysctl.cfg
 /etc/sysctl.conf
@@ -306,7 +313,8 @@ removemod
 ––deps
 ––list-depends
 
-35. Which of the following commands can be used to show the various pieces of information related to a currently loaded module, including core size and settings for options?
+35. Which of the following commands can be used to show the various pieces of information
+ related to a currently loaded module, including core size and settings for options?
 
 systool -v -m <module>
 modinfo -r <module>
